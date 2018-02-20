@@ -16,5 +16,17 @@ namespace Blinkki_CB
         {
             InitializeComponent();
         }
+
+        public void Title(string title)
+        {
+            this.Text = title;
+
+        }
+
+        public void CurrentUrl(string url)
+        {
+
+        }
+
     }
 }
