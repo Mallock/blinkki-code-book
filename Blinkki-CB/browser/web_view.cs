@@ -29,12 +29,13 @@ namespace Blinkki_CB
         private ChromiumWebBrowser browser;
         private SearchSuggestionsAPI searchAPI = new SearchSuggestionsAPI();
 
-        public web_view(Blinkki window, string url)
+        public web_view(Blinkki window, string url, bool hideTools=true)
         {
             this.url = url;
             this.frm = window;
-
+            
             InitializeComponent();
+            this.browserTools.Visible = hideTools;
             if (!Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
             {
                 this.url = "https://www.google.com/?gws_rd=ssl#q=" + Uri.EscapeDataString(url);

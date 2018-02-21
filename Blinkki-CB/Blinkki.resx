@@ -124,6 +124,17 @@
     <value>226, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnChat.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEgSURBVDhPY6A68PDwYA8MDAwF4l4gnhsQENAKpJ2AUowQ
+        FXgAUKE3UMMTIP0fHfv7+58NDg7WhirFBEBFEX5+fn/RNSJjoPwHoCF6UC0IADRdFqjgK7oGHPiavb09
+        C1QrBACd3YNFIT4cCtUKAUADrkAl/gHxJwLs/0D1s6FaIQDkN6hkGzAW+ID8X8hsUEwgiYMM2AHVCgFA
+        wacgCWBYXAfSM/GxoXgNVCsEAAU2IEkSxEAXVEC1QgBQwAebQlwY6KIEqFYEABqyDptibBhowC6oNgTw
+        8fHhAkpuRleMhEExcQIYkH+A+C8QS0G1ogBGoEsigQoPARX8BGkE0p+B9IagoCBrkAIgWwaophprikQG
+        9fX1TKGhoTxQLq0AAwMAkMkN8ul+S30AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnGoogle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

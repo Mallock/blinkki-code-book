@@ -38,6 +38,7 @@
             this.btnGoogle = new System.Windows.Forms.ToolStripButton();
             this.btnGitHub = new System.Windows.Forms.ToolStripButton();
             this.btnIconFinder = new System.Windows.Forms.ToolStripButton();
+            this.btnChat = new System.Windows.Forms.ToolStripButton();
             this.mnuMain.SuspendLayout();
             this.mainTools.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             this.mainTools.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mainTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnChat,
             this.btnGoogle,
             this.btnStackOveflow,
             this.btnGitHub,
@@ -125,6 +127,15 @@
             this.btnIconFinder.Size = new System.Drawing.Size(23, 22);
             this.btnIconFinder.Click += new System.EventHandler(this.btnIconFinder_Click);
             // 
+            // btnChat
+            // 
+            this.btnChat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnChat.Image = ((System.Drawing.Image)(resources.GetObject("btnChat.Image")));
+            this.btnChat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnChat.Name = "btnChat";
+            this.btnChat.Size = new System.Drawing.Size(23, 22);
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
+            // 
             // Blinkki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +170,7 @@
         private System.Windows.Forms.ToolStripButton btnGoogle;
         private System.Windows.Forms.ToolStripButton btnGitHub;
         private System.Windows.Forms.ToolStripButton btnIconFinder;
+        private System.Windows.Forms.ToolStripButton btnChat;
     }
 }
 

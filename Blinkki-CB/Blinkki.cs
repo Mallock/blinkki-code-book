@@ -74,6 +74,12 @@ namespace Blinkki_CB
             web.Show(dockPanel);
         }
 
+        public void OpenNewChat(string url)
+        {
+            web_view web = new web_view(this, url, false);
+            web.Show(dockPanel, DockState.DockLeft);
+        }
+
         private void btnGoogle_Click(object sender, EventArgs e)
         {
             OpenNewTab("https://www.google.com/");
@@ -92,6 +98,11 @@ namespace Blinkki_CB
         private void btnIconFinder_Click(object sender, EventArgs e)
         {
             OpenNewTab("https://www.iconfinder.com/");
+        }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            OpenNewChat("https://tlk.io/blinkki-cb");
         }
     }
 }
