@@ -18,7 +18,7 @@ namespace Blinkki_CB
 {
     public partial class web_view : DockContent
     {
-        
+
         private string url { get; set; }
         public string loadedUrl { get; set; }
         public string title { get; set; }
@@ -45,10 +45,24 @@ namespace Blinkki_CB
             {
                 Dock = DockStyle.Fill
             };
-
+            cwb.AddressChanged += Cwb_AddressChanged;
+            cwb.TitleChanged += Cwb_TitleChanged;
             return cwb;
         }
 
+        private void Cwb_TitleChanged(object sender, TitleChangedEventArgs e)
+        {
+            this.BeginInvoke(((Action)(() => this.Text = e.Title)));
+        }
+
+        private void Cwb_AddressChanged(object sender, AddressChangedEventArgs e)
+        {
+            this.loadedUrl = e.Address;
+            while (!this.IsHandleCreated) // added
+                System.Threading.Thread.Sleep(100); //added
+            frm.BeginInvoke(((Action)(() => frm.CurrentUrl(this.loadedUrl))));
+            this.BeginInvoke((Action)(() => UpdateIcon(this.loadedUrl)));
+        }
 
         private void AddBrowserToPanel(ChromiumWebBrowser brw)
         {
@@ -57,7 +71,7 @@ namespace Blinkki_CB
             while (!this.IsHandleCreated) // added
                 System.Threading.Thread.Sleep(100); //added
             frm.BeginInvoke(((Action)(() => frm.CurrentUrl(this.loadedUrl))));
-            UpdateIcon(this.loadedUrl);
+            this.BeginInvoke((Action)(() => UpdateIcon(this.loadedUrl)));
         }
 
         private void web_view_Shown(object sender, EventArgs e)
@@ -117,18 +131,23 @@ namespace Blinkki_CB
         {
             try
             {
-                Image tmpimg = null;
-                HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create("http://www.google.com/s2/favicons?domain=" + url);
-                HttpWebResponse httpWebReponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                Stream stream = httpWebReponse.GetResponseStream();
-                tmpimg = Image.FromStream(stream);
-                Bitmap bitmap = new Bitmap(tmpimg);
-                bitmap.SetResolution(16, 16);
-                Icon icon = System.Drawing.Icon.FromHandle(bitmap.GetHicon());
-                this.Icon = icon;
+                if (url!=null)
+                {
+                    Image tmpimg = null;
+                    HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create("http://www.google.com/s2/favicons?domain=" + url);
+                    HttpWebResponse httpWebReponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    Stream stream = httpWebReponse.GetResponseStream();
+                    tmpimg = Image.FromStream(stream);
+                    Bitmap bitmap = new Bitmap(tmpimg);
+                    bitmap.SetResolution(16, 16);
+                    Icon icon = System.Drawing.Icon.FromHandle(bitmap.GetHicon());
+                    this.Icon = icon;
+                    
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -141,7 +160,8 @@ namespace Blinkki_CB
 
         private void web_view_Load(object sender, EventArgs e)
         {
-            UpdateIcon(this.url);
+            this.BeginInvoke((Action)(() => UpdateIcon(this.loadedUrl)));
+            this.Refresh();
         }
 
         private void openLinkInToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,7 +171,7 @@ namespace Blinkki_CB
         }
 
     }
- 
+
 
     class MyClient : WebClient
     {
