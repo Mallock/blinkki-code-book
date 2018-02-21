@@ -18,22 +18,19 @@ namespace Blinkki_CB
 {
     public partial class web_view : DockContent
     {
-       
-        Hashtable browserStack = new Hashtable();
         
         private string url { get; set; }
         public string loadedUrl { get; set; }
         public string title { get; set; }
         private Blinkki frm { get; set; }
-        private int stackCount = 0;
-
+        private ChromiumWebBrowser browser;
         public web_view(Blinkki window, string url)
         {
             this.url = url;
             this.frm = window;
 
             InitializeComponent();
-            if (!Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute) && !url.Contains("fav.html"))
+            if (!Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
             {
                 this.url = "https://www.google.com/?gws_rd=ssl#q=" + Uri.EscapeDataString(url);
             }
@@ -49,122 +46,71 @@ namespace Blinkki_CB
                 Dock = DockStyle.Fill
             };
 
-                        
-            if (!browserStack.ContainsKey(stackCount))
-            {
-                browserStack.Add(stackCount, cwb);
-            }
-            else
-            {
-                stackCount++;
-                browserStack.Add(stackCount, cwb);
-            }
             return cwb;
         }
 
 
-        private void AddBrowserToPanel(int stackNo)
+        private void AddBrowserToPanel(ChromiumWebBrowser brw)
         {
-            ((ChromiumWebBrowser)browserStack[stackNo]).Visible = true;
-            this.pnlBrowser.Controls.Add(((ChromiumWebBrowser)browserStack[stackNo]));
-            ((ChromiumWebBrowser)browserStack[stackNo]).ResumeLayout();
-            if (((ChromiumWebBrowser)browserStack[stackNo]).GetBrowser().MainFrame.Url != null)
-            {
-                this.BeginInvoke(((Action)(() => this.Text = ((ChromiumWebBrowser)browserStack[stackNo]).GetBrowser().MainFrame.Url)));
-                frm.BeginInvoke(((Action)(() => frm.Title(((ChromiumWebBrowser)browserStack[stackNo]).GetBrowser().MainFrame.Url))));
-            }
-            this.loadedUrl = ((ChromiumWebBrowser)browserStack[stackNo]).Address;
+            browser = brw;
+            this.pnlBrowser.Controls.Add(browser);
             while (!this.IsHandleCreated) // added
                 System.Threading.Thread.Sleep(100); //added
             frm.BeginInvoke(((Action)(() => frm.CurrentUrl(this.loadedUrl))));
             UpdateIcon(this.loadedUrl);
         }
 
-        private void RemoveBrowserFromPanel(int stackNo)
-        {
-            ((ChromiumWebBrowser)browserStack[stackNo]).Visible = false;
-            this.pnlBrowser.Controls.Remove(((ChromiumWebBrowser)browserStack[stackNo]));
-            ((ChromiumWebBrowser)browserStack[stackNo]).SuspendLayout();
-        }
-
         private void web_view_Shown(object sender, EventArgs e)
         {
-
             if (Cef.IsInitialized)
             {
-                CefBrowser(this.url);
-                AddBrowserToPanel(stackCount);
+                AddBrowserToPanel(CefBrowser(this.url));
             }
         }
 
 
-        public void LoadUrl(string url, bool newBrowser)
+        public void LoadUrl(string url)
         {
 
             if (!url.StartsWith("http") && !url.Contains("."))
             {
                 url = "https://www.google.com/?gws_rd=ssl#q=" + Uri.EscapeDataString(url);
             }
-            if (newBrowser)
-            {
-                CefBrowser(url);
-                RemoveBrowserFromPanel(stackCount - 1);
-                AddBrowserToPanel(stackCount);
-            }
-            else
-            {
-                ((ChromiumWebBrowser)browserStack[stackCount]).Load(url);
-            }
-            
+            browser.Load(url);
         }
 
 
         public void Stop()
         {
-            ((ChromiumWebBrowser)browserStack[stackCount]).Stop();
+            browser.Stop();
         }
 
         public void Print()
         {
-            ((ChromiumWebBrowser)browserStack[stackCount]).Print();
+            browser.Print();
         }
 
         public void ShowDevTools()
         {
-            ((ChromiumWebBrowser)browserStack[stackCount]).ShowDevTools();
+            browser.ShowDevTools();
         }
 
         public void Back()
         {
-            if (((ChromiumWebBrowser)browserStack[stackCount]).CanGoBack)
+            if (browser.CanGoBack)
             {
-                ((ChromiumWebBrowser)browserStack[stackCount]).Back();
-            }
-            else
-            {
-                if (browserStack.ContainsKey(stackCount - 1))
-                {
-                    RemoveBrowserFromPanel(stackCount);
-                    AddBrowserToPanel(stackCount - 1);
-                    ((ChromiumWebBrowser)browserStack[stackCount]).Dispose();
-                    browserStack.Remove(stackCount);
-                    stackCount--;
-                }
-                else
-                {
-                    ((ChromiumWebBrowser)browserStack[stackCount]).Back();
-                }
+                browser.Back();
             }
         }
 
         public void Forward()
         {
-            ((ChromiumWebBrowser)browserStack[stackCount]).Forward();
+            browser.Forward();
         }
 
         public void RefreshPage()
         {
-            ((ChromiumWebBrowser)browserStack[stackCount]).Reload();
+            browser.Reload();
         }
 
         public void UpdateIcon(string url)
@@ -190,7 +136,7 @@ namespace Blinkki_CB
         {
             //openLinkInToolStripMenuItem.Tag = link;
             //browserContextMenu.Show(Control.MousePosition);
-            LoadUrl(link,true);
+            LoadUrl(link);
         }
 
         private void web_view_Load(object sender, EventArgs e)
@@ -201,18 +147,7 @@ namespace Blinkki_CB
         private void openLinkInToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //frm.BeginInvoke(((Action)(() => frm.OpenNewTab(openLinkInToolStripMenuItem.Tag.ToString()))));
-            LoadUrl(openLinkInToolStripMenuItem.Tag.ToString(),true);
-        }
-
-        private void web_view_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.frm = null;
-            pnlBrowser.Controls.Remove(((ChromiumWebBrowser)browserStack[stackCount]));
-            Thread.Sleep(100);
-            for (int i = 0; i < browserStack.Count; i++)
-            {
-                ((ChromiumWebBrowser)browserStack[i]).Dispose();
-            }   
+            LoadUrl(openLinkInToolStripMenuItem.Tag.ToString());
         }
 
     }

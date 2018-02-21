@@ -68,7 +68,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "web_view";
             this.Text = "Browser";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.web_view_FormClosing);
             this.Load += new System.EventHandler(this.web_view_Load);
             this.Shown += new System.EventHandler(this.web_view_Shown);
             this.browserContextMenu.ResumeLayout(false);
