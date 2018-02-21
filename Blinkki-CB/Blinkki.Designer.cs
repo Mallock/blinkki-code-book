@@ -36,6 +36,8 @@
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.btnStackOveflow = new System.Windows.Forms.ToolStripButton();
             this.btnGoogle = new System.Windows.Forms.ToolStripButton();
+            this.btnGitHub = new System.Windows.Forms.ToolStripButton();
+            this.btnIconFinder = new System.Windows.Forms.ToolStripButton();
             this.mnuMain.SuspendLayout();
             this.mainTools.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +72,9 @@
             this.mainTools.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mainTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnGoogle,
-            this.btnStackOveflow});
+            this.btnStackOveflow,
+            this.btnGitHub,
+            this.btnIconFinder});
             this.mainTools.Location = new System.Drawing.Point(0, 613);
             this.mainTools.Name = "mainTools";
             this.mainTools.Size = new System.Drawing.Size(1057, 25);
@@ -92,7 +96,6 @@
             this.btnStackOveflow.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnStackOveflow.Name = "btnStackOveflow";
             this.btnStackOveflow.Size = new System.Drawing.Size(23, 22);
-            this.btnStackOveflow.Text = "stack overflow";
             this.btnStackOveflow.Click += new System.EventHandler(this.btnStackOveflow_Click);
             // 
             // btnGoogle
@@ -102,8 +105,25 @@
             this.btnGoogle.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGoogle.Name = "btnGoogle";
             this.btnGoogle.Size = new System.Drawing.Size(23, 22);
-            this.btnGoogle.Text = "Google";
             this.btnGoogle.Click += new System.EventHandler(this.btnGoogle_Click);
+            // 
+            // btnGitHub
+            // 
+            this.btnGitHub.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnGitHub.Image = ((System.Drawing.Image)(resources.GetObject("btnGitHub.Image")));
+            this.btnGitHub.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnGitHub.Name = "btnGitHub";
+            this.btnGitHub.Size = new System.Drawing.Size(23, 22);
+            this.btnGitHub.Click += new System.EventHandler(this.btnGitHub_Click);
+            // 
+            // btnIconFinder
+            // 
+            this.btnIconFinder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnIconFinder.Image = ((System.Drawing.Image)(resources.GetObject("btnIconFinder.Image")));
+            this.btnIconFinder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnIconFinder.Name = "btnIconFinder";
+            this.btnIconFinder.Size = new System.Drawing.Size(23, 22);
+            this.btnIconFinder.Click += new System.EventHandler(this.btnIconFinder_Click);
             // 
             // Blinkki
             // 
@@ -118,6 +138,7 @@
             this.Name = "Blinkki";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Blinkki - Code Book";
+            this.Shown += new System.EventHandler(this.Blinkki_Shown);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
             this.mainTools.ResumeLayout(false);
@@ -136,6 +157,8 @@
         private WeifenLuo.WinFormsUI.Docking.DockPanel dockPanel;
         private System.Windows.Forms.ToolStripButton btnStackOveflow;
         private System.Windows.Forms.ToolStripButton btnGoogle;
+        private System.Windows.Forms.ToolStripButton btnGitHub;
+        private System.Windows.Forms.ToolStripButton btnIconFinder;
     }
 }
 

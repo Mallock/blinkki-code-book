@@ -14,6 +14,9 @@ using System.Threading;
 using System.Net;
 using System.IO;
 using System.Globalization;
+using Blinkki_CB.api.internet;
+using System.Drawing.Drawing2D;
+
 namespace Blinkki_CB
 {
     public partial class web_view : DockContent
@@ -24,6 +27,8 @@ namespace Blinkki_CB
         public string title { get; set; }
         private Blinkki frm { get; set; }
         private ChromiumWebBrowser browser;
+        private SearchSuggestionsAPI searchAPI = new SearchSuggestionsAPI();
+
         public web_view(Blinkki window, string url)
         {
             this.url = url;
@@ -36,6 +41,9 @@ namespace Blinkki_CB
             }
             this.Text = url;
             this.title = url;
+
+            browserTools.Renderer = new MainFormToolStripRenderer();
+
         }
 
         private ChromiumWebBrowser CefBrowser(string url)
@@ -60,7 +68,7 @@ namespace Blinkki_CB
             this.loadedUrl = e.Address;
             while (!this.IsHandleCreated) // added
                 System.Threading.Thread.Sleep(100); //added
-            frm.BeginInvoke(((Action)(() => frm.CurrentUrl(this.loadedUrl))));
+            this.BeginInvoke(((Action)(() => this.txtToolUrl.Text = this.loadedUrl)));
             this.BeginInvoke((Action)(() => UpdateIcon(this.loadedUrl)));
         }
 
@@ -170,6 +178,113 @@ namespace Blinkki_CB
             LoadUrl(openLinkInToolStripMenuItem.Tag.ToString());
         }
 
+        private void txtToolUrl_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                lstSuggestions.Visible = false;
+                LoadUrl(txtToolUrl.Text);
+                lstSuggestions.Items.Clear();
+                lstSuggestions.Visible = false;
+                e.Handled = true;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                if (e.KeyCode == Keys.Up && this.lstSuggestions.SelectedIndex - 1 > -1)
+                {
+                    lstSuggestions.SelectedIndex--;
+                }
+                else
+                {
+                    lstSuggestions.SelectedIndex = lstSuggestions.Items.Count - 1;
+                }
+            }
+            if (e.KeyCode == Keys.Down && this.lstSuggestions.SelectedIndex + 1 < this.lstSuggestions.Items.Count)
+            {
+                lstSuggestions.SelectedIndex++;
+            }
+        }
+
+        private void txtToolUrl_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (txtToolUrl.SelectedText == "")
+            {
+                txtToolUrl.SelectAll();
+            }
+        }
+
+        private void txtToolUrl_TextChanged(object sender, EventArgs e)
+        {
+            if (txtToolUrl.Focused)
+            {
+                if (lstSuggestions.SelectedItem == null)
+                {
+                    this.BeginInvoke(((Action)(() => searchAPI.StartSearchSuggestions(txtToolUrl.Text, this))));
+                }
+            }
+        }
+
+        public void UpdateSearchSuggestions(string[] suggestions)
+        {
+            if (suggestions.Length > 0)
+            {
+                lstSuggestions.Visible = true;
+                lstSuggestions.Items.Clear();
+                lstSuggestions.Items.AddRange(suggestions.ToArray());
+            }
+            else
+            {
+                lstSuggestions.Visible = false;
+                lstSuggestions.Items.Clear();
+                lstSuggestions.Items.AddRange(suggestions.ToArray());
+            }
+        }
+
+        private void lstSuggestions_MouseDown(object sender, MouseEventArgs e)
+        {
+            int index = lstSuggestions.IndexFromPoint(e.Location);
+            lstSuggestions.SelectedIndex = index;
+  
+             LoadUrl(lstSuggestions.SelectedItem.ToString());
+            
+            lstSuggestions.Items.Clear();
+            lstSuggestions.Visible = false;
+        }
+
+        private void lstSuggestions_MouseHover(object sender, EventArgs e)
+        {
+            int index = lstSuggestions.IndexFromPoint(lstSuggestions.PointToClient(Cursor.Position));
+            lstSuggestions.SelectedIndex = index;
+        }
+
+        private void lstSuggestions_MouseMove(object sender, MouseEventArgs e)
+        {
+            int index = lstSuggestions.IndexFromPoint(lstSuggestions.PointToClient(Cursor.Position));
+            lstSuggestions.SelectedIndex = index;
+        }
+
+        private void lstSuggestions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstSuggestions.SelectedItem != null)
+            {
+                txtToolUrl.Text = lstSuggestions.SelectedItem.ToString();
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Back();
+        }
+
+        private void btnForward_Click(object sender, EventArgs e)
+        {
+            this.Forward();
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            this.RefreshPage();
+        }
     }
 
 
@@ -187,4 +302,28 @@ namespace Blinkki_CB
         }
     }
 
+    public class MainFormToolStripRenderer : ToolStripProfessionalRenderer
+    {
+
+        public MainFormToolStripRenderer()
+        {
+            this.RoundedEdges = false;
+
+        }
+        protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
+        {
+        }
+
+
+        protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
+        {
+            //you may want to change this based on the toolstrip's dock or layout style
+            LinearGradientMode mode = LinearGradientMode.Vertical;
+
+            using (LinearGradientBrush b = new LinearGradientBrush(e.AffectedBounds, Color.White, Color.White, mode))
+            {
+                e.Graphics.FillRectangle(b, e.AffectedBounds);
+            }
+        }
+    }
 }

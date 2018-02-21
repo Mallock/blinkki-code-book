@@ -78,5 +78,20 @@ namespace Blinkki_CB
         {
             OpenNewTab("https://www.google.com/");
         }
+
+        private void btnGitHub_Click(object sender, EventArgs e)
+        {
+            OpenNewTab("https://github.com/");
+        }
+
+        private void Blinkki_Shown(object sender, EventArgs e)
+        {
+            OpenNewTab("https://www.google.com/");
+        }
+
+        private void btnIconFinder_Click(object sender, EventArgs e)
+        {
+            OpenNewTab("https://www.iconfinder.com/");
+        }
     }
 }
