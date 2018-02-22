@@ -50,12 +50,6 @@ namespace Blinkki_CB
         public void Title(string title)
         {
             this.Text = title;
-
-        }
-
-        public void CurrentUrl(string url)
-        {
-
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

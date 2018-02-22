@@ -39,6 +39,8 @@
             this.btnForward = new System.Windows.Forms.ToolStripButton();
             this.btnReload = new System.Windows.Forms.ToolStripButton();
             this.txtToolUrl = new System.Windows.Forms.ToolStripTextBox();
+            this.btnFav = new System.Windows.Forms.ToolStripDropDownButton();
+            this.linkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBrowser.SuspendLayout();
             this.browserContextMenu.SuspendLayout();
             this.browserTools.SuspendLayout();
@@ -52,7 +54,7 @@
             this.pnlBrowser.Controls.Add(this.lstSuggestions);
             this.pnlBrowser.Location = new System.Drawing.Point(0, 23);
             this.pnlBrowser.Name = "pnlBrowser";
-            this.pnlBrowser.Size = new System.Drawing.Size(840, 374);
+            this.pnlBrowser.Size = new System.Drawing.Size(1224, 606);
             this.pnlBrowser.TabIndex = 0;
             // 
             // lstSuggestions
@@ -61,9 +63,9 @@
             this.lstSuggestions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstSuggestions.FormattingEnabled = true;
             this.lstSuggestions.ItemHeight = 21;
-            this.lstSuggestions.Location = new System.Drawing.Point(70, -1);
+            this.lstSuggestions.Location = new System.Drawing.Point(69, -1);
             this.lstSuggestions.Name = "lstSuggestions";
-            this.lstSuggestions.Size = new System.Drawing.Size(720, 149);
+            this.lstSuggestions.Size = new System.Drawing.Size(782, 149);
             this.lstSuggestions.TabIndex = 5;
             this.lstSuggestions.Visible = false;
             this.lstSuggestions.SelectedIndexChanged += new System.EventHandler(this.lstSuggestions_SelectedIndexChanged);
@@ -91,11 +93,12 @@
             this.btnBack,
             this.btnForward,
             this.btnReload,
-            this.txtToolUrl});
+            this.txtToolUrl,
+            this.btnFav});
             this.browserTools.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.browserTools.Location = new System.Drawing.Point(0, 0);
             this.browserTools.Name = "browserTools";
-            this.browserTools.Size = new System.Drawing.Size(840, 23);
+            this.browserTools.Size = new System.Drawing.Size(1224, 23);
             this.browserTools.TabIndex = 1;
             this.browserTools.Text = "toolStrip1";
             // 
@@ -131,16 +134,36 @@
             this.txtToolUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtToolUrl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtToolUrl.Name = "txtToolUrl";
-            this.txtToolUrl.Size = new System.Drawing.Size(720, 22);
-            this.txtToolUrl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtToolUrl_KeyUp);
-            this.txtToolUrl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtToolUrl_MouseUp);
-            this.txtToolUrl.TextChanged += new System.EventHandler(this.txtToolUrl_TextChanged);
+            this.txtToolUrl.Size = new System.Drawing.Size(780, 22);
+            // 
+            // btnFav
+            // 
+            this.btnFav.BackColor = System.Drawing.Color.Transparent;
+            this.btnFav.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnFav.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.linkToolStripMenuItem});
+            this.btnFav.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFav.Image = ((System.Drawing.Image)(resources.GetObject("btnFav.Image")));
+            this.btnFav.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFav.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.btnFav.Name = "btnFav";
+            this.btnFav.ShowDropDownArrow = false;
+            this.btnFav.Size = new System.Drawing.Size(20, 20);
+            this.btnFav.Click += new System.EventHandler(this.btnFav_Click);
+            this.btnFav.MouseHover += new System.EventHandler(this.btnFav_MouseHover);
+            // 
+            // linkToolStripMenuItem
+            // 
+            this.linkToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.linkToolStripMenuItem.Name = "linkToolStripMenuItem";
+            this.linkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.linkToolStripMenuItem.Text = "link";
             // 
             // web_view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 395);
+            this.ClientSize = new System.Drawing.Size(1224, 627);
             this.Controls.Add(this.browserTools);
             this.Controls.Add(this.pnlBrowser);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,6 +192,8 @@
         private System.Windows.Forms.ToolStripButton btnForward;
         private System.Windows.Forms.ToolStripButton btnReload;
         private System.Windows.Forms.ListBox lstSuggestions;
+        private System.Windows.Forms.ToolStripDropDownButton btnFav;
+        private System.Windows.Forms.ToolStripMenuItem linkToolStripMenuItem;
     }
 }
 

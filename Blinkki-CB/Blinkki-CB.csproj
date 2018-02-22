@@ -74,6 +74,12 @@
     <Compile Include="Blinkki.Designer.cs">
       <DependentUpon>Blinkki.cs</DependentUpon>
     </Compile>
+    <Compile Include="blinkki1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>blinkki.settings</DependentUpon>
+    </Compile>
+    <Compile Include="browser\Favourites.cs" />
     <Compile Include="browser\Web_view.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,7 +102,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="blinkki.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>blinkki1.Designer.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -114,6 +125,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="blnk_ico.ico" />
+    <None Include="images\no_fav.png" />
+    <None Include="images\fav.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

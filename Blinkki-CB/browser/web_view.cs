@@ -28,6 +28,7 @@ namespace Blinkki_CB
         private Blinkki frm { get; set; }
         private ChromiumWebBrowser browser;
         private SearchSuggestionsAPI searchAPI = new SearchSuggestionsAPI();
+        Favourites favs = new Favourites();
 
         public web_view(Blinkki window, string url, bool hideTools=true)
         {
@@ -35,6 +36,11 @@ namespace Blinkki_CB
             this.frm = window;
             
             InitializeComponent();
+
+            this.txtToolUrl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtToolUrl_KeyUp);
+            this.txtToolUrl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtToolUrl_MouseUp);
+            this.txtToolUrl.TextChanged += new System.EventHandler(this.txtToolUrl_TextChanged);
+            
             this.browserTools.Visible = hideTools;
             if (!Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
             {
@@ -44,7 +50,15 @@ namespace Blinkki_CB
             this.title = url;
 
             browserTools.Renderer = new MainFormToolStripRenderer();
+            favs.LoadFavTable();
+            btnFav.DropDownItemClicked += new ToolStripItemClickedEventHandler(btnFav_DropDownItemClicked);
+        }
 
+        private void btnFav_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            frm.OpenNewTab(e.ClickedItem.Tag.ToString());
+
+            favs.UpdateFavLink(e.ClickedItem.Tag.ToString());
         }
 
         private ChromiumWebBrowser CefBrowser(string url)
@@ -79,8 +93,25 @@ namespace Blinkki_CB
             this.pnlBrowser.Controls.Add(browser);
             while (!this.IsHandleCreated) // added
                 System.Threading.Thread.Sleep(100); //added
-            frm.BeginInvoke(((Action)(() => frm.CurrentUrl(this.loadedUrl))));
+            frm.BeginInvoke(((Action)(() => this.CurrentUrl(this.loadedUrl))));
             this.BeginInvoke((Action)(() => UpdateIcon(this.loadedUrl)));
+        }
+
+        private void CurrentUrl(string url)
+        {
+            if (url != null)
+            {
+                if (url.Equals("file:///" + System.IO.Directory.GetCurrentDirectory().Replace("\\", "/") + "/fav.html"))
+                {
+                    this.txtToolUrl.Text = "";
+                    this.txtToolUrl.Focus();
+                }
+                else
+                {
+                    this.txtToolUrl.Text = url;
+                    CheckFavIcon();
+                }
+            }
         }
 
         private void web_view_Shown(object sender, EventArgs e)
@@ -151,7 +182,7 @@ namespace Blinkki_CB
                     bitmap.SetResolution(16, 16);
                     Icon icon = System.Drawing.Icon.FromHandle(bitmap.GetHicon());
                     this.Icon = icon;
-                    
+                    CheckFavIcon();
                 }
             }
             catch (Exception ex)
@@ -286,6 +317,67 @@ namespace Blinkki_CB
         {
             this.RefreshPage();
         }
+
+        private void btnFav_Click(object sender, EventArgs e)
+        {
+            if (browser != null)
+            {
+                if (this.loadedUrl != "" && this.Text != "")
+                {
+                    favs.SaveFavLink(this.loadedUrl, this.Text, this.Icon, 1);
+                }
+            }
+            CheckFavIcon();
+            favs.SaveFavTable();
+        }
+
+        private void CheckFavIcon()
+        {
+            if (favs.IsFav(this.txtToolUrl.Text))
+            {
+                btnFav.Image = Properties.Resources.fav;
+            }
+            else
+            {
+                btnFav.Image = Properties.Resources.no_fav;
+            }
+        }
+
+        private void btnFav_MouseHover(object sender, EventArgs e)
+        {
+            if (btnFav.DropDown.Visible == false)
+            {
+                DataRowCollection rc = favs.GetFavs();
+                btnFav.DropDownItems.Clear();
+                foreach (DataRow r in rc)
+                {
+                    ToolStripItem tItem = new ToolStripMenuItem();
+                    tItem.Tag = r[0].ToString();
+                    tItem.Text = truncateString(r[1].ToString(), 100);
+                    tItem.ImageScaling = ToolStripItemImageScaling.None;
+                    Bitmap ico = favs.BytesToBitmap((byte[])r[2]);
+                    tItem.Image = ico;
+                    btnFav.DropDownItems.Add(tItem);
+                }
+                btnFav.ShowDropDown();
+            }
+        }
+
+        public static string truncateString(string originalString, int length)
+        {
+            if (string.IsNullOrEmpty(originalString))
+            {
+                return originalString;
+            }
+            if (originalString.Length > length)
+            {
+                return originalString.Substring(0, length) + "...";
+            }
+            else
+            {
+                return originalString;
+            }
+        }
     }
 
 
@@ -327,4 +419,70 @@ namespace Blinkki_CB
             }
         }
     }
+
+
+    public class ToolStripSpringTextBox : ToolStripTextBox
+    {
+        public override Size GetPreferredSize(Size constrainingSize)
+        {
+            // Use the default size if the text box is on the overflow menu
+            // or is on a vertical ToolStrip.
+            if (IsOnOverflow || Owner.Orientation == Orientation.Vertical)
+            {
+                return DefaultSize;
+            }
+
+            // Declare a variable to store the total available width as 
+            // it is calculated, starting with the display width of the 
+            // owning ToolStrip.
+            Int32 width = Owner.DisplayRectangle.Width;
+
+            // Subtract the width of the overflow button if it is displayed. 
+            if (Owner.OverflowButton.Visible)
+            {
+                width = width - Owner.OverflowButton.Width -
+                  Owner.OverflowButton.Margin.Horizontal;
+            }
+
+            // Declare a variable to maintain a count of ToolStripSpringTextBox 
+            // items currently displayed in the owning ToolStrip. 
+            Int32 springBoxCount = 0;
+
+            foreach (ToolStripItem item in Owner.Items)
+            {
+                // Ignore items on the overflow menu.
+                if (item.IsOnOverflow) continue;
+
+                if (item is ToolStripSpringTextBox)
+                {
+                    // For ToolStripSpringTextBox items, increment the count and 
+                    // subtract the margin width from the total available width.
+                    springBoxCount++;
+                    width -= item.Margin.Horizontal;
+                }
+                else
+                {
+                    // For all other items, subtract the full width from the total
+                    // available width.
+                    width = width - item.Width - item.Margin.Horizontal;
+                }
+            }
+
+            // If there are multiple ToolStripSpringTextBox items in the owning
+            // ToolStrip, divide the total available width between them. 
+            if (springBoxCount > 1) width /= springBoxCount;
+
+            // If the available width is less than the default width, use the
+            // default width, forcing one or more items onto the overflow menu.
+            if (width < DefaultSize.Width) width = DefaultSize.Width;
+
+            // Retrieve the preferred size from the base class, but change the
+            // width to the calculated width. 
+            Size size = base.GetPreferredSize(constrainingSize);
+            size.Width = width;
+            return size;
+        }
+    }
+
+
 }
