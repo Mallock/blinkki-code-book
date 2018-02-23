@@ -33,12 +33,15 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainTools = new System.Windows.Forms.ToolStrip();
-            this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.btnStackOveflow = new System.Windows.Forms.ToolStripButton();
+            this.btnChat = new System.Windows.Forms.ToolStripButton();
             this.btnGoogle = new System.Windows.Forms.ToolStripButton();
+            this.btnStackOveflow = new System.Windows.Forms.ToolStripButton();
             this.btnGitHub = new System.Windows.Forms.ToolStripButton();
             this.btnIconFinder = new System.Windows.Forms.ToolStripButton();
-            this.btnChat = new System.Windows.Forms.ToolStripButton();
+            this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
+            this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.microsoftMangementConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.mainTools.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +49,8 @@
             // mnuMain
             // 
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.applicationsToolStripMenuItem});
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
             this.mnuMain.Size = new System.Drawing.Size(1057, 24);
@@ -64,7 +68,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -83,22 +87,14 @@
             this.mainTools.TabIndex = 5;
             this.mainTools.Text = "toolStrip2";
             // 
-            // dockPanel
+            // btnChat
             // 
-            this.dockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dockPanel.Location = new System.Drawing.Point(0, 24);
-            this.dockPanel.Name = "dockPanel";
-            this.dockPanel.Size = new System.Drawing.Size(1057, 589);
-            this.dockPanel.TabIndex = 6;
-            // 
-            // btnStackOveflow
-            // 
-            this.btnStackOveflow.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnStackOveflow.Image = ((System.Drawing.Image)(resources.GetObject("btnStackOveflow.Image")));
-            this.btnStackOveflow.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnStackOveflow.Name = "btnStackOveflow";
-            this.btnStackOveflow.Size = new System.Drawing.Size(23, 22);
-            this.btnStackOveflow.Click += new System.EventHandler(this.btnStackOveflow_Click);
+            this.btnChat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnChat.Image = ((System.Drawing.Image)(resources.GetObject("btnChat.Image")));
+            this.btnChat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnChat.Name = "btnChat";
+            this.btnChat.Size = new System.Drawing.Size(23, 22);
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // btnGoogle
             // 
@@ -108,6 +104,15 @@
             this.btnGoogle.Name = "btnGoogle";
             this.btnGoogle.Size = new System.Drawing.Size(23, 22);
             this.btnGoogle.Click += new System.EventHandler(this.btnGoogle_Click);
+            // 
+            // btnStackOveflow
+            // 
+            this.btnStackOveflow.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnStackOveflow.Image = ((System.Drawing.Image)(resources.GetObject("btnStackOveflow.Image")));
+            this.btnStackOveflow.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnStackOveflow.Name = "btnStackOveflow";
+            this.btnStackOveflow.Size = new System.Drawing.Size(23, 22);
+            this.btnStackOveflow.Click += new System.EventHandler(this.btnStackOveflow_Click);
             // 
             // btnGitHub
             // 
@@ -127,14 +132,38 @@
             this.btnIconFinder.Size = new System.Drawing.Size(23, 22);
             this.btnIconFinder.Click += new System.EventHandler(this.btnIconFinder_Click);
             // 
-            // btnChat
+            // dockPanel
             // 
-            this.btnChat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnChat.Image = ((System.Drawing.Image)(resources.GetObject("btnChat.Image")));
-            this.btnChat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(23, 22);
-            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
+            this.dockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dockPanel.Location = new System.Drawing.Point(0, 24);
+            this.dockPanel.Name = "dockPanel";
+            this.dockPanel.Size = new System.Drawing.Size(1057, 589);
+            this.dockPanel.TabIndex = 6;
+            // 
+            // applicationsToolStripMenuItem
+            // 
+            this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calcToolStripMenuItem,
+            this.microsoftMangementConsoleToolStripMenuItem});
+            this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
+            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.applicationsToolStripMenuItem.Text = "Applications";
+            // 
+            // calcToolStripMenuItem
+            // 
+            this.calcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("calcToolStripMenuItem.Image")));
+            this.calcToolStripMenuItem.Name = "calcToolStripMenuItem";
+            this.calcToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.calcToolStripMenuItem.Text = "Calculator";
+            this.calcToolStripMenuItem.Click += new System.EventHandler(this.calcToolStripMenuItem_Click);
+            // 
+            // microsoftMangementConsoleToolStripMenuItem
+            // 
+            this.microsoftMangementConsoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("microsoftMangementConsoleToolStripMenuItem.Image")));
+            this.microsoftMangementConsoleToolStripMenuItem.Name = "microsoftMangementConsoleToolStripMenuItem";
+            this.microsoftMangementConsoleToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.microsoftMangementConsoleToolStripMenuItem.Text = "Microsoft Mangement Console";
+            this.microsoftMangementConsoleToolStripMenuItem.Click += new System.EventHandler(this.microsoftMangementConsoleToolStripMenuItem_Click);
             // 
             // Blinkki
             // 
@@ -171,6 +200,9 @@
         private System.Windows.Forms.ToolStripButton btnGitHub;
         private System.Windows.Forms.ToolStripButton btnIconFinder;
         private System.Windows.Forms.ToolStripButton btnChat;
+        private System.Windows.Forms.ToolStripMenuItem applicationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calcToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem microsoftMangementConsoleToolStripMenuItem;
     }
 }
 

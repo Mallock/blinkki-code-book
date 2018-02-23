@@ -98,5 +98,17 @@ namespace Blinkki_CB
         {
             OpenNewChat("https://tlk.io/blinkki-cb");
         }
+
+        private void calcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowsApp app = new WindowsApp();
+            app.OpenCalc();
+        }
+
+        private void microsoftMangementConsoleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowsApp app = new WindowsApp();
+            app.OpenMsc();
+        }
     }
 }
