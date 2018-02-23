@@ -11,6 +11,7 @@ using CefSharp;
 using CefSharp.WinForms;
 using System.Globalization;
 using System.Drawing.Drawing2D;
+using System.IO;
 
 namespace Blinkki_CB
 {
@@ -86,7 +87,14 @@ namespace Blinkki_CB
 
         private void Blinkki_Shown(object sender, EventArgs e)
         {
-            OpenNewTab("https://www.google.com/");
+            if (File.Exists(System.IO.Directory.GetCurrentDirectory() + "/fav.html"))
+            {
+                OpenNewTab(System.IO.Directory.GetCurrentDirectory() + "/fav.html");
+            }
+            else
+            {
+                OpenNewTab("https://www.google.com/");
+            }     
         }
 
         private void btnIconFinder_Click(object sender, EventArgs e)

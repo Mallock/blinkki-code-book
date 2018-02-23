@@ -42,7 +42,7 @@ namespace Blinkki_CB
             this.txtToolUrl.TextChanged += new System.EventHandler(this.txtToolUrl_TextChanged);
             
             this.browserTools.Visible = hideTools;
-            if (!Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute))
+            if (!Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute) && !url.Contains("/fav.html"))
             {
                 this.url = "https://www.google.com/?gws_rd=ssl#q=" + Uri.EscapeDataString(url);
             }
@@ -171,7 +171,7 @@ namespace Blinkki_CB
         {
             try
             {
-                if (url!=null)
+                if (url!=null && !url.Contains("file:/"))
                 {
                     Image tmpimg = null;
                     HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create("http://www.google.com/s2/favicons?domain=" + url);
@@ -376,6 +376,14 @@ namespace Blinkki_CB
             else
             {
                 return originalString;
+            }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            if(File.Exists(System.IO.Directory.GetCurrentDirectory() + "/fav.html"))
+            {
+                LoadUrl(System.IO.Directory.GetCurrentDirectory() + "/fav.html");
             }
         }
     }

@@ -41,6 +41,7 @@
             this.txtToolUrl = new System.Windows.Forms.ToolStripTextBox();
             this.btnFav = new System.Windows.Forms.ToolStripDropDownButton();
             this.linkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHome = new System.Windows.Forms.ToolStripButton();
             this.pnlBrowser.SuspendLayout();
             this.browserContextMenu.SuspendLayout();
             this.browserTools.SuspendLayout();
@@ -63,7 +64,7 @@
             this.lstSuggestions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstSuggestions.FormattingEnabled = true;
             this.lstSuggestions.ItemHeight = 21;
-            this.lstSuggestions.Location = new System.Drawing.Point(69, -1);
+            this.lstSuggestions.Location = new System.Drawing.Point(111, 0);
             this.lstSuggestions.Name = "lstSuggestions";
             this.lstSuggestions.Size = new System.Drawing.Size(782, 149);
             this.lstSuggestions.TabIndex = 5;
@@ -93,8 +94,9 @@
             this.btnBack,
             this.btnForward,
             this.btnReload,
-            this.txtToolUrl,
-            this.btnFav});
+            this.btnHome,
+            this.btnFav,
+            this.txtToolUrl});
             this.browserTools.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.browserTools.Location = new System.Drawing.Point(0, 0);
             this.browserTools.Name = "browserTools";
@@ -159,6 +161,15 @@
             this.linkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.linkToolStripMenuItem.Text = "link";
             // 
+            // btnHome
+            // 
+            this.btnHome.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(23, 20);
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // web_view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +205,7 @@
         private System.Windows.Forms.ListBox lstSuggestions;
         private System.Windows.Forms.ToolStripDropDownButton btnFav;
         private System.Windows.Forms.ToolStripMenuItem linkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton btnHome;
     }
 }
 
