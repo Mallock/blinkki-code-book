@@ -118,5 +118,10 @@ namespace Blinkki_CB
             WindowsApp app = new WindowsApp();
             app.OpenMsc();
         }
+
+        private void Blinkki_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Cef.Shutdown();
+        }
     }
 }

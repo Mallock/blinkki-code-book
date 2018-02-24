@@ -178,6 +178,7 @@
             this.Name = "Blinkki";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Blinkki - Code Book";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Blinkki_FormClosing);
             this.Shown += new System.EventHandler(this.Blinkki_Shown);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();

@@ -79,6 +79,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>blinkki.settings</DependentUpon>
     </Compile>
+    <Compile Include="browser\DownloadDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="browser\DownloadDialog.Designer.cs">
+      <DependentUpon>DownloadDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="browser\Favourites.cs" />
     <Compile Include="browser\Web_view.cs">
       <SubType>Form</SubType>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="Blinkki.resx">
       <DependentUpon>Blinkki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="browser\DownloadDialog.resx">
+      <DependentUpon>DownloadDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="browser\Web_view.resx">
       <DependentUpon>Web_view.cs</DependentUpon>

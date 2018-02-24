@@ -29,18 +29,20 @@ namespace Blinkki_CB
         private ChromiumWebBrowser browser;
         private SearchSuggestionsAPI searchAPI = new SearchSuggestionsAPI();
         Favourites favs = new Favourites();
+        private List<DownloadDialog> listOfDownloadItems = new List<DownloadDialog> { };
 
-        public web_view(Blinkki window, string url, bool hideTools=true)
+
+        public web_view(Blinkki window, string url, bool hideTools = true)
         {
             this.url = url;
             this.frm = window;
-            
+
             InitializeComponent();
 
             this.txtToolUrl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtToolUrl_KeyUp);
             this.txtToolUrl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtToolUrl_MouseUp);
             this.txtToolUrl.TextChanged += new System.EventHandler(this.txtToolUrl_TextChanged);
-            
+
             this.browserTools.Visible = hideTools;
             if (!Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute) && !url.Contains("/fav.html"))
             {
@@ -67,10 +69,49 @@ namespace Blinkki_CB
             ChromiumWebBrowser cwb = new ChromiumWebBrowser(url)
             {
                 Dock = DockStyle.Fill
+
             };
+            IcatLifespanHandler life = new IcatLifespanHandler();
+            DownloadHandler download = new DownloadHandler();
+
+            download.OnBeforeDownloadFired += Download_OnBeforeDownloadFired;
+            download.OnDownloadUpdatedFired += Download_OnDownloadUpdatedFired;
+
+
+            life.frm = this.frm;
+            cwb.DownloadHandler = download;
+            cwb.LifeSpanHandler = life;
             cwb.AddressChanged += Cwb_AddressChanged;
             cwb.TitleChanged += Cwb_TitleChanged;
             return cwb;
+        }
+
+        private void Download_OnDownloadUpdatedFired(object sender, DownloadItem e)
+        {
+            bool allComplete = false;
+            foreach (DownloadDialog dwnload in listOfDownloadItems)
+            {
+                dwnload.UpdateDownloadStatus(e);
+                if (e.IsCancelled || e.IsComplete)
+                {
+                    allComplete = true;
+                }else
+                {
+                    allComplete = false;
+                }
+            }
+
+            if (allComplete)
+            {
+                listOfDownloadItems.Clear();
+            }
+        }
+
+        private void Download_OnBeforeDownloadFired(object sender, DownloadItem e)
+        {
+            DownloadDialog download = new DownloadDialog(e);
+            listOfDownloadItems.Add(download);
+            download.Show();
         }
 
         private void Cwb_TitleChanged(object sender, TitleChangedEventArgs e)
@@ -171,7 +212,7 @@ namespace Blinkki_CB
         {
             try
             {
-                if (url!=null && !url.Contains("file:/"))
+                if (url != null && !url.Contains("file:/"))
                 {
                     Image tmpimg = null;
                     HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create("http://www.google.com/s2/favicons?domain=" + url);
@@ -276,9 +317,9 @@ namespace Blinkki_CB
         {
             int index = lstSuggestions.IndexFromPoint(e.Location);
             lstSuggestions.SelectedIndex = index;
-  
-             LoadUrl(lstSuggestions.SelectedItem.ToString());
-            
+
+            LoadUrl(lstSuggestions.SelectedItem.ToString());
+
             lstSuggestions.Items.Clear();
             lstSuggestions.Visible = false;
         }
@@ -381,7 +422,7 @@ namespace Blinkki_CB
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            if(File.Exists(System.IO.Directory.GetCurrentDirectory() + "/fav.html"))
+            if (File.Exists(System.IO.Directory.GetCurrentDirectory() + "/fav.html"))
             {
                 LoadUrl(System.IO.Directory.GetCurrentDirectory() + "/fav.html");
             }
@@ -429,68 +470,85 @@ namespace Blinkki_CB
     }
 
 
-    public class ToolStripSpringTextBox : ToolStripTextBox
+    class IcatLifespanHandler : ILifeSpanHandler
     {
-        public override Size GetPreferredSize(Size constrainingSize)
+
+        public Blinkki frm { get; set; }
+
+        public bool DoClose(IWebBrowser browserControl, IBrowser browser)
         {
-            // Use the default size if the text box is on the overflow menu
-            // or is on a vertical ToolStrip.
-            if (IsOnOverflow || Owner.Orientation == Orientation.Vertical)
+            return true;
+        }
+
+        public void OnAfterCreated(IWebBrowser browserControl, IBrowser browser)
+        {
+
+        }
+
+        public void OnBeforeClose(IWebBrowser browser)
+        {
+
+        }
+
+        public void OnBeforeClose(IWebBrowser browserControl, IBrowser browser)
+        {
+
+        }
+
+        public bool OnBeforePopup(IWebBrowser browserControl, IBrowser browser, IFrame frame, string targetUrl, string targetFrameName, WindowOpenDisposition targetDisposition, bool userGesture, IPopupFeatures popupFeatures, IWindowInfo windowInfo, IBrowserSettings browserSettings, ref bool noJavascriptAccess, out IWebBrowser newBrowser)
+        {
+            if (!targetUrl.Contains("oauth"))
             {
-                return DefaultSize;
+                frm.BeginInvoke(((Action)(() => frm.OpenNewTab(targetUrl))));
+                newBrowser = null;
+
+                return true;
             }
-
-            // Declare a variable to store the total available width as 
-            // it is calculated, starting with the display width of the 
-            // owning ToolStrip.
-            Int32 width = Owner.DisplayRectangle.Width;
-
-            // Subtract the width of the overflow button if it is displayed. 
-            if (Owner.OverflowButton.Visible)
+            else
             {
-                width = width - Owner.OverflowButton.Width -
-                  Owner.OverflowButton.Margin.Horizontal;
+                newBrowser = null;
+
+                return false;
             }
-
-            // Declare a variable to maintain a count of ToolStripSpringTextBox 
-            // items currently displayed in the owning ToolStrip. 
-            Int32 springBoxCount = 0;
-
-            foreach (ToolStripItem item in Owner.Items)
-            {
-                // Ignore items on the overflow menu.
-                if (item.IsOnOverflow) continue;
-
-                if (item is ToolStripSpringTextBox)
-                {
-                    // For ToolStripSpringTextBox items, increment the count and 
-                    // subtract the margin width from the total available width.
-                    springBoxCount++;
-                    width -= item.Margin.Horizontal;
-                }
-                else
-                {
-                    // For all other items, subtract the full width from the total
-                    // available width.
-                    width = width - item.Width - item.Margin.Horizontal;
-                }
-            }
-
-            // If there are multiple ToolStripSpringTextBox items in the owning
-            // ToolStrip, divide the total available width between them. 
-            if (springBoxCount > 1) width /= springBoxCount;
-
-            // If the available width is less than the default width, use the
-            // default width, forcing one or more items onto the overflow menu.
-            if (width < DefaultSize.Width) width = DefaultSize.Width;
-
-            // Retrieve the preferred size from the base class, but change the
-            // width to the calculated width. 
-            Size size = base.GetPreferredSize(constrainingSize);
-            size.Width = width;
-            return size;
         }
     }
 
+    public class DownloadHandler : IDownloadHandler
+    {
+        public event EventHandler<DownloadItem> OnBeforeDownloadFired;
+        
+        public event EventHandler<DownloadItem> OnDownloadUpdatedFired;
 
+
+        public void OnBeforeDownload(IBrowser browser, DownloadItem downloadItem, IBeforeDownloadCallback callback)
+        {
+            var handler = OnBeforeDownloadFired;
+
+            if (handler != null)
+            {
+                handler(this, downloadItem);
+            }
+           
+            if (!callback.IsDisposed)
+            {
+                using (callback)
+                {
+                    callback.Continue(downloadItem.SuggestedFileName, showDialog: true);
+                }
+            }
+        }
+
+        public void OnDownloadUpdated(IBrowser browser, DownloadItem downloadItem, IDownloadItemCallback callback)
+        {
+            var handler = OnDownloadUpdatedFired;
+
+            if (handler != null)
+            {
+                handler(this, downloadItem);
+            }
+        }
+    }
 }
+
+
+
