@@ -76,7 +76,7 @@ namespace Blinkki_CB
 
             download.OnBeforeDownloadFired += Download_OnBeforeDownloadFired;
             download.OnDownloadUpdatedFired += Download_OnDownloadUpdatedFired;
-
+            download.OnDownloadUpdatedFiredCallBack += Download_OnDownloadUpdatedFiredCallBack;
 
             life.frm = this.frm;
             cwb.DownloadHandler = download;
@@ -84,6 +84,17 @@ namespace Blinkki_CB
             cwb.AddressChanged += Cwb_AddressChanged;
             cwb.TitleChanged += Cwb_TitleChanged;
             return cwb;
+        }
+
+        private void Download_OnDownloadUpdatedFiredCallBack(object sender, IDownloadItemCallback e)
+        {
+            foreach (DownloadDialog dwnload in listOfDownloadItems)
+            {
+                if (dwnload.Visible == false)
+                {
+                    e.Cancel();
+                }
+            }
         }
 
         private void Download_OnDownloadUpdatedFired(object sender, DownloadItem e)
@@ -99,6 +110,13 @@ namespace Blinkki_CB
                 {
                     allComplete = false;
                 }
+                if (dwnload.Visible==false)
+                {
+                    if (e.FullPath == dwnload.dItem.FullPath)
+                    {
+                        e.IsCancelled = true;
+                    }
+                } 
             }
 
             if (allComplete)
@@ -111,7 +129,7 @@ namespace Blinkki_CB
         {
             DownloadDialog download = new DownloadDialog(e);
             listOfDownloadItems.Add(download);
-            download.Show();
+            frm.AddDownloadDock(download);
         }
 
         private void Cwb_TitleChanged(object sender, TitleChangedEventArgs e)
@@ -519,6 +537,7 @@ namespace Blinkki_CB
         
         public event EventHandler<DownloadItem> OnDownloadUpdatedFired;
 
+        public event EventHandler<IDownloadItemCallback> OnDownloadUpdatedFiredCallBack;
 
         public void OnBeforeDownload(IBrowser browser, DownloadItem downloadItem, IBeforeDownloadCallback callback)
         {
@@ -541,10 +560,12 @@ namespace Blinkki_CB
         public void OnDownloadUpdated(IBrowser browser, DownloadItem downloadItem, IDownloadItemCallback callback)
         {
             var handler = OnDownloadUpdatedFired;
-
+            
             if (handler != null)
             {
                 handler(this, downloadItem);
+                var cDownloadCallback = OnDownloadUpdatedFiredCallBack;
+                if (callback != null) { cDownloadCallback(this, callback); }
             }
         }
     }

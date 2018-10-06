@@ -32,6 +32,9 @@
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.microsoftMangementConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainTools = new System.Windows.Forms.ToolStrip();
             this.btnChat = new System.Windows.Forms.ToolStripButton();
             this.btnGoogle = new System.Windows.Forms.ToolStripButton();
@@ -39,9 +42,6 @@
             this.btnGitHub = new System.Windows.Forms.ToolStripButton();
             this.btnIconFinder = new System.Windows.Forms.ToolStripButton();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.microsoftMangementConsoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.mainTools.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +72,31 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // applicationsToolStripMenuItem
+            // 
+            this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.calcToolStripMenuItem,
+            this.microsoftMangementConsoleToolStripMenuItem});
+            this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
+            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.applicationsToolStripMenuItem.Text = "Applications";
+            // 
+            // calcToolStripMenuItem
+            // 
+            this.calcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("calcToolStripMenuItem.Image")));
+            this.calcToolStripMenuItem.Name = "calcToolStripMenuItem";
+            this.calcToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.calcToolStripMenuItem.Text = "Calculator";
+            this.calcToolStripMenuItem.Click += new System.EventHandler(this.calcToolStripMenuItem_Click);
+            // 
+            // microsoftMangementConsoleToolStripMenuItem
+            // 
+            this.microsoftMangementConsoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("microsoftMangementConsoleToolStripMenuItem.Image")));
+            this.microsoftMangementConsoleToolStripMenuItem.Name = "microsoftMangementConsoleToolStripMenuItem";
+            this.microsoftMangementConsoleToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.microsoftMangementConsoleToolStripMenuItem.Text = "Microsoft Mangement Console";
+            this.microsoftMangementConsoleToolStripMenuItem.Click += new System.EventHandler(this.microsoftMangementConsoleToolStripMenuItem_Click);
+            // 
             // mainTools
             // 
             this.mainTools.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -81,7 +106,7 @@
             this.btnStackOveflow,
             this.btnGitHub,
             this.btnIconFinder});
-            this.mainTools.Location = new System.Drawing.Point(0, 613);
+            this.mainTools.Location = new System.Drawing.Point(0, 449);
             this.mainTools.Name = "mainTools";
             this.mainTools.Size = new System.Drawing.Size(1057, 25);
             this.mainTools.TabIndex = 5;
@@ -137,39 +162,14 @@
             this.dockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dockPanel.Location = new System.Drawing.Point(0, 24);
             this.dockPanel.Name = "dockPanel";
-            this.dockPanel.Size = new System.Drawing.Size(1057, 589);
+            this.dockPanel.Size = new System.Drawing.Size(1057, 425);
             this.dockPanel.TabIndex = 6;
-            // 
-            // applicationsToolStripMenuItem
-            // 
-            this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.calcToolStripMenuItem,
-            this.microsoftMangementConsoleToolStripMenuItem});
-            this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
-            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.applicationsToolStripMenuItem.Text = "Applications";
-            // 
-            // calcToolStripMenuItem
-            // 
-            this.calcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("calcToolStripMenuItem.Image")));
-            this.calcToolStripMenuItem.Name = "calcToolStripMenuItem";
-            this.calcToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-            this.calcToolStripMenuItem.Text = "Calculator";
-            this.calcToolStripMenuItem.Click += new System.EventHandler(this.calcToolStripMenuItem_Click);
-            // 
-            // microsoftMangementConsoleToolStripMenuItem
-            // 
-            this.microsoftMangementConsoleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("microsoftMangementConsoleToolStripMenuItem.Image")));
-            this.microsoftMangementConsoleToolStripMenuItem.Name = "microsoftMangementConsoleToolStripMenuItem";
-            this.microsoftMangementConsoleToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-            this.microsoftMangementConsoleToolStripMenuItem.Text = "Microsoft Mangement Console";
-            this.microsoftMangementConsoleToolStripMenuItem.Click += new System.EventHandler(this.microsoftMangementConsoleToolStripMenuItem_Click);
             // 
             // Blinkki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 638);
+            this.ClientSize = new System.Drawing.Size(1057, 474);
             this.Controls.Add(this.dockPanel);
             this.Controls.Add(this.mainTools);
             this.Controls.Add(this.mnuMain);

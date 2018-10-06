@@ -23,6 +23,7 @@ namespace Blinkki_CB
 
             CefSettings settings = new CefSettings();
             settings.CachePath = System.IO.Path.GetTempPath();
+            settings.CefCommandLineArgs.Add("enable-npapi", "1");
             settings.Locale = CultureInfo.CurrentCulture.Name;
             Cef.Initialize(settings);
 
@@ -111,6 +112,12 @@ namespace Blinkki_CB
         {
             WindowsApp app = new WindowsApp();
             app.OpenCalc();
+        }
+
+        internal void AddDownloadDock(DownloadDialog download)
+        {
+            download.Show();
+            ///download.Show(dockPanel, DockState.DockBottom);
         }
 
         private void microsoftMangementConsoleToolStripMenuItem_Click(object sender, EventArgs e)

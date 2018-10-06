@@ -39,6 +39,7 @@ namespace Blinkki_CB.api.internet
                 }
                 catch (ArgumentException e)
                 {
+                    Console.WriteLine(e.Message);
                     encoding = Encoding.UTF8;
                 }
 
