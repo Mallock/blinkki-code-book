@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blinkki-CB", "Blinkki-CB.csproj", "{0B7E00FF-043F-40A8-8639-F1158B16AA80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazeAutomationFramework", "..\BlazeAutomationFramework\BlazeAutomationFramework.csproj", "{DC2EEA96-42D6-44E7-8FDD-96602422E5F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,14 @@ Global
 		{0B7E00FF-043F-40A8-8639-F1158B16AA80}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0B7E00FF-043F-40A8-8639-F1158B16AA80}.Release|x64.ActiveCfg = Release|Any CPU
 		{0B7E00FF-043F-40A8-8639-F1158B16AA80}.Release|x64.Build.0 = Release|Any CPU
+		{DC2EEA96-42D6-44E7-8FDD-96602422E5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2EEA96-42D6-44E7-8FDD-96602422E5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2EEA96-42D6-44E7-8FDD-96602422E5F5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DC2EEA96-42D6-44E7-8FDD-96602422E5F5}.Debug|x64.Build.0 = Debug|Any CPU
+		{DC2EEA96-42D6-44E7-8FDD-96602422E5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2EEA96-42D6-44E7-8FDD-96602422E5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2EEA96-42D6-44E7-8FDD-96602422E5F5}.Release|x64.ActiveCfg = Release|Any CPU
+		{DC2EEA96-42D6-44E7-8FDD-96602422E5F5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -99,14 +99,13 @@
             // 
             // mainTools
             // 
-            this.mainTools.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.mainTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnChat,
             this.btnGoogle,
             this.btnStackOveflow,
             this.btnGitHub,
             this.btnIconFinder});
-            this.mainTools.Location = new System.Drawing.Point(0, 449);
+            this.mainTools.Location = new System.Drawing.Point(0, 24);
             this.mainTools.Name = "mainTools";
             this.mainTools.Size = new System.Drawing.Size(1057, 25);
             this.mainTools.TabIndex = 5;
@@ -160,7 +159,7 @@
             // dockPanel
             // 
             this.dockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dockPanel.Location = new System.Drawing.Point(0, 24);
+            this.dockPanel.Location = new System.Drawing.Point(0, 49);
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.Size = new System.Drawing.Size(1057, 425);
             this.dockPanel.TabIndex = 6;

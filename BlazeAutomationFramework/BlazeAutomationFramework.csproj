@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC2EEA96-42D6-44E7-8FDD-96602422E5F5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BlazeAutomationFramework</RootNamespace>
+    <AssemblyName>BlazeAutomationFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=3.0.4.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\Blinkki-CB\packages\DockPanelSuite.3.0.4\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking.ThemeVS2015, Version=3.0.4.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\Blinkki-CB\packages\DockPanelSuite.ThemeVS2015.3.0.4\lib\net40\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blaze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Blaze.Designer.cs">
+      <DependentUpon>Blaze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\BlazeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\BlazeEditor.Designer.cs">
+      <DependentUpon>BlazeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Blaze.resx">
+      <DependentUpon>Blaze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\BlazeEditor.resx">
+      <DependentUpon>BlazeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Atool.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Atool32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\augment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundworker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backnav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bindingnavigator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bindingsource.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluetoothoff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluetoothoff2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluetoothon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluetoothon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\callstack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checksum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checksum2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clouds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colordialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colored.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connectair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connected.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contrast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coordinates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_checksum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_ocr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crystal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\curves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datagridview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dataset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datetimepicker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\device.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deviceconfig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deviceinfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\directoryentry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\directorysearcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnected.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnectedthunder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\errorlist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eventlog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fforward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filesystemwatcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folderbrowserdialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fontdialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fullscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hangup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\horizontalresize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagelist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\infod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maskedtextbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\messagequeue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nextnav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ocr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opendialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagesetup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perfomancecounter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picturebox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plugin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pointer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printdialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printdocument.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\properties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\random.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redeye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportviewer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\research.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rewind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rotatezoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\savedialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\serialport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\servicecontroller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snippet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speech.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\style.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tasklist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textselection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thunder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unfocus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warningwindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\webbrowser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\weblink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\verticalresize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writemail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomauto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoomout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editor.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
