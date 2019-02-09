@@ -44,7 +44,7 @@ namespace Blinkki_CB
                 file.WriteLine("<!DOCTYPE html>");
                 file.WriteLine("<html>");
                 file.WriteLine("<head>");
-                file.WriteLine("<title>helmi</title>");
+                file.WriteLine("<title>Favourites</title>");
                 file.WriteLine("<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\" />");
                 file.WriteLine("<style>");
                 file.WriteLine(@"html, body

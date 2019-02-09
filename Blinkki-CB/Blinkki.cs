@@ -21,12 +21,6 @@ namespace Blinkki_CB
         {
             InitializeComponent();
 
-            CefSettings settings = new CefSettings();
-            settings.CachePath = System.IO.Path.GetTempPath();
-            settings.CefCommandLineArgs.Add("enable-npapi", "1");
-            settings.Locale = CultureInfo.CurrentCulture.Name;
-            Cef.Initialize(settings);
-
             dockPanel.DocumentStyle = DocumentStyle.DockingWindow;
             dockPanel.Theme = new WeifenLuo.WinFormsUI.Docking.VS2012LightTheme();
             DockPaneStripSkin dockPaneSkin = new DockPaneStripSkin();
@@ -42,8 +36,6 @@ namespace Blinkki_CB
             dockPaneSkin.DocumentGradient.InactiveTabGradient.StartColor = Color.Silver;
             dockPaneSkin.DocumentGradient.InactiveTabGradient.EndColor = Color.WhiteSmoke;
             dockPaneSkin.DocumentGradient.InactiveTabGradient.TextColor = Color.White;
-
-           
 
             dockPanel.ShowDocumentIcon = true;
 
@@ -86,18 +78,6 @@ namespace Blinkki_CB
             OpenNewTab("https://github.com/");
         }
 
-        private void Blinkki_Shown(object sender, EventArgs e)
-        {
-            if (File.Exists(System.IO.Directory.GetCurrentDirectory() + "/fav.html"))
-            {
-                OpenNewTab(System.IO.Directory.GetCurrentDirectory() + "/fav.html");
-            }
-            else
-            {
-                OpenNewTab("https://www.google.com/");
-            }     
-        }
-
         private void btnIconFinder_Click(object sender, EventArgs e)
         {
             OpenNewTab("https://www.iconfinder.com/");
@@ -129,6 +109,34 @@ namespace Blinkki_CB
         private void Blinkki_FormClosing(object sender, FormClosingEventArgs e)
         {
             Cef.Shutdown();
+        }
+
+        private void btnBlinkki_Click(object sender, EventArgs e)
+        {
+            OpenNewTab("https://code.blinkki.com/");
+        }
+
+        private void btnFavs_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(System.IO.Directory.GetCurrentDirectory() + "/fav.html"))
+            {
+                OpenNewTab(System.IO.Directory.GetCurrentDirectory() + "/fav.html");
+            }
+        }
+
+
+        private void Blinkki_Shown(object sender, EventArgs e)
+        {
+            Cef.EnableHighDPISupport();
+            Cef.AddDisposable(this);
+
+            CefSettings settings = new CefSettings();
+            settings.CachePath = System.IO.Path.GetTempPath();
+
+            //settings.CefCommandLineArgs.Add("enable-npapi", "1");
+            settings.Locale = CultureInfo.CurrentCulture.Name;
+            Cef.Initialize(settings);
+            OpenNewTab("https://code.blinkki.com/");
         }
     }
 }

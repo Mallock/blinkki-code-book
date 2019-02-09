@@ -66,11 +66,9 @@ namespace Blinkki_CB
         private ChromiumWebBrowser CefBrowser(string url)
         {
 
-            ChromiumWebBrowser cwb = new ChromiumWebBrowser(url)
-            {
-                Dock = DockStyle.Fill
-
-            };
+            ChromiumWebBrowser cwb = new ChromiumWebBrowser(url);
+            
+            
             IcatLifespanHandler life = new IcatLifespanHandler();
             DownloadHandler download = new DownloadHandler();
 
@@ -150,6 +148,7 @@ namespace Blinkki_CB
         {
             browser = brw;
             this.pnlBrowser.Controls.Add(browser);
+            browser.Dock = DockStyle.Fill;
             while (!this.IsHandleCreated) // added
                 System.Threading.Thread.Sleep(100); //added
             frm.BeginInvoke(((Action)(() => this.CurrentUrl(this.loadedUrl))));
@@ -539,7 +538,8 @@ namespace Blinkki_CB
 
         public event EventHandler<IDownloadItemCallback> OnDownloadUpdatedFiredCallBack;
 
-        public void OnBeforeDownload(IBrowser browser, DownloadItem downloadItem, IBeforeDownloadCallback callback)
+
+        public void OnBeforeDownload(IWebBrowser chromiumWebBrowser, IBrowser browser, DownloadItem downloadItem, IBeforeDownloadCallback callback)
         {
             var handler = OnBeforeDownloadFired;
 
@@ -547,7 +547,7 @@ namespace Blinkki_CB
             {
                 handler(this, downloadItem);
             }
-           
+
             if (!callback.IsDisposed)
             {
                 using (callback)
@@ -557,10 +557,10 @@ namespace Blinkki_CB
             }
         }
 
-        public void OnDownloadUpdated(IBrowser browser, DownloadItem downloadItem, IDownloadItemCallback callback)
+        public void OnDownloadUpdated(IWebBrowser chromiumWebBrowser, IBrowser browser, DownloadItem downloadItem, IDownloadItemCallback callback)
         {
             var handler = OnDownloadUpdatedFired;
-            
+
             if (handler != null)
             {
                 handler(this, downloadItem);
