@@ -187,14 +187,14 @@
             this.dockPanel.Location = new System.Drawing.Point(0, 55);
             this.dockPanel.Margin = new System.Windows.Forms.Padding(4);
             this.dockPanel.Name = "dockPanel";
-            this.dockPanel.Size = new System.Drawing.Size(1409, 528);
+            this.dockPanel.Size = new System.Drawing.Size(1409, 678);
             this.dockPanel.TabIndex = 6;
             // 
             // Blinkki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1409, 583);
+            this.ClientSize = new System.Drawing.Size(1409, 733);
             this.Controls.Add(this.dockPanel);
             this.Controls.Add(this.mainTools);
             this.Controls.Add(this.mnuMain);

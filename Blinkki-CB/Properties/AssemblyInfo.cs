@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Blinkki-CB")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP Inc.")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Blinkki-CB")]
-[assembly: AssemblyCopyright("Copyright © HP Inc. 2018")]
+[assembly: AssemblyCopyright("Copyright ©Mika Leiman 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
