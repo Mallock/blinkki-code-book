@@ -12,7 +12,7 @@ namespace Blinkki_CB {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class blinkki : global::System.Configuration.ApplicationSettingsBase {
         
         private static blinkki defaultInstance = ((blinkki)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new blinkki())));
@@ -25,7 +25,292 @@ namespace Blinkki_CB {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("<DocumentElement>\\r\\n  <Favourites>\\r\\n    <url>https://visualstudio.microsoft.co" +
+            "m/</url>\\r\\n    <name>Visual Studio IDE, Code Editor, VSTS, &amp; App Center - V" +
+            "isual Studio</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAA" +
+            "AAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF0SURBVDhP3dK" +
+            "9K8RxHMDxz0a5OgsDZVMGRZFNVqVMymCxk42ULoOIyyEiA5Iu7sGFcM7Dee6MBtnIL8L9PObunOPo7cv" +
+            "0+/4JDK++0+fd90neaguwStbk8V5fzHO5wOoqhwk3LR6he9eOIyR0buj+Q+BnwOq1OpdUXRFPpSqwvMx" +
+            "BfIamWaFrJ4uOoPxGrCRdX4TVR10hX40VxKtssB4ikvDRGrDjPCyga8tO97ZOzDLBKloiPFRmY+QI7z4" +
+            "/Wy/DNIwLrStCs19oCeiE0Dia4BhsTkGgH4wzrj6vCBseImaA/RsPB7c66bsDjQkD9+C8gaMUkDyBSw9" +
+            "E/aACqCErkcFLNC4DGbtFHMe0n6b5vG7DnFDHWRJSPmVeJzZ/HI03Ru5CEtvkNa4LtYO7IRKLdtjLV0d" +
+            "Ta1gnMvOEZvqRjLkYMnJBz5kKRHt58aon3cxU/0KtazoR9zMaFcnyxpFRg95zFTCdxNTtE1bP+jO0rvv" +
+            "zAeEbIBms47BYVBYAAAAASUVORK5CYII=</icon>\\r\\n    <clicks>1</clicks>\\r\\n  </Favour" +
+            "ites>\\r\\n  <Favourites>\\r\\n    <url>https://code.visualstudio.com/</url>\\r\\n    " +
+            "<name>Visual Studio Code - Code Editing. Redefined</name>\\r\\n    <icon>iVBORw0KG" +
+            "goAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJc" +
+            "EhZcwAAEnQAABJ0Ad5mH3gAAAF+SURBVDhPYyAZlBx6xeCUVw/lkQEar/9nqLv0n6H24n+GsEmroaI4g" +
+            "EtRK4N7eSeUBwENV/8zVJ2B4JoL/6GiWIBbaStDA9S2+isIhcgGgDAYxMzdwWARlwHhAIF3bQfYqSBng" +
+            "hQ1XCNggIazJ0Pz7f8MQV2LGDwq2xiabv5nKDvxFeiFIrAhIE0wgNUAEJDS0YE7N23VabCYlrs7Q91lI" +
+            "g3wqpkIdmrl2d8Mlad/MRgEhDCoWFsTZ0Bgx2KwhJq9I4O0nh7E2UDDkhbvYqg5T4QB1sl5EAYUSOsaM" +
+            "FSfg0QTSBEoTGAAqwHYgJSuLtz2pCWHoaIkGAAC8iamDDzCwlAeBGAYoGxlBUxtDQwxMzcyxMzexeBR3" +
+            "s9gGBTLwM7DA9WCCvC6QNXOgSG0bxVDxYkvDK33gFEKVFyw+wlDwsLDDAFtCxks47PAUQ3TjDcpK5qbM" +
+            "wR3L2EoPfaeofEGxDBQlIICl+jMBAMgw/xb5jIU7n3GkLvzPiI7MzAAALYOEEKPScXAAAAAAElFTkSuQ" +
+            "mCC</icon>\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n   " +
+            " <url>https://netbeans.org/</url>\\r\\n    <name>Welcome to NetBeans</name>\\r\\n   " +
+            " <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BA" +
+            "ACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAM1SURBVDhPdZNrTBNmFIYboyQazDTR4Li4ioToD" +
+            "10cZlmIJP7QbHGmArO6TOclZj8kQYIyFnHemOLQeMVGcIgiBe2KaIdYsEMptGktbaFcBLFALVIpN2MUF" +
+            "JQ9+1pJasz2JufXOe9zzndyPsnHmjIlKCgkdNWqMGni5VBpoitcmmgRsSd4ZmTkZMl/a+Yn0dGi8GC4N" +
+            "IHFS79jy84MlJVVZF+8wsqvtyONWofIl4bNl8l8TSZtEsn0GaGhInFiQXQ8q2U/ceqyEqvHRcuwF2ufm" +
+            "4b+Xpqfe6lqrGdnWiZLvlgvQAk+2CY/4LOo+O7lK3dwTKnFNugVRg+23m5MTzpFOP1hdndhF7DGoWfoO" +
+            "rs4r9Kwfts+H8ggiVos54fUP7lgBIVhiCL7E7SPnBgFwNLjg3Si63hEWVM7mlYXdu9LGgdGuKSuJWrR9" +
+            "/gBOw78RWZhL9nqF5zUjnBO/4ICq4fSli7Kmp3c7fDQNjRK/5t/cA2+pGd4hD+KKwOALenX2ZvbxMFLH" +
+            "Ry52ktWySDHy0e4537L8Ng7Bt5M4B56RX27C62pgbsWBydyVQHA5jQl6QobGXnNZF7t4tg1D4cLPVQ63" +
+            "vF8fIKHPf2YWp3oHjgor7VSYbDxu+J6ALAx5Qpp5yz8IiAHCtrJKnZzpKSPCgEYHHuL/bGbmoY2f/eb9" +
+            "8xoaiwczSkOADbsyif1tEFAzGRcdIjuTgF4xp0m3/jjmNvEIuubKK+zotYZuFFt4rczRQGAPDmPlFN6A" +
+            "akVT7Hya34rmcqn3GmeEIsbQ+9oo8Jop+y+CVWVXkDqOHSmMAD45sej7M6pI+VkDXvEFHtzG8QU3Whbo" +
+            "G/0NTqrA43egvpvAyphLq02sjUp6z3g04g1a8Kka1khSyHp+C3SL5j5WVEvdvEYbSt4Xo1SabajEctT3" +
+            "zeSnp3D0i/lREbLHQKw2X+Ns+fExIjTzI9YKCP22ySST9/mUJGT6g7wvh7n9gMb+8/msSx2o7i+eN8Z7" +
+            "5obEhPjN3+oufPi4sR5lkQsXEtcfCoF1e0oVGV8/pVcmPyfKW3qtODgyfL/15yQ2FjxnYvC5ycMCOBDY" +
+            "UyeFjRr1mT6A0kk/wJ9bESbaqphOAAAAABJRU5ErkJggg==</icon>\\r\\n    <clicks>1</clicks>" +
+            "\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://nodejs.org/en/</url>\\r" +
+            "\\n    <name>Node.js</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf" +
+            "8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAImSURB" +
+            "VDhPjdLfT1JhGAdw/gMvG2NttXXh2lqps0DOAcQfBEgoxEHicA5K/PKAhhFKOCWLyMpMbctsGCH9GNPc" +
+            "rHQ2na22LloX3tdt/QNu3n57c2ee1jjN7+X7vs/nfZ69r0IuxxuV9sg884ObdHxXnjxiFpcPF9+M+Vt2" +
+            "K4jMuxCG34QgvPDDlbV8Fbfl05auL6c+epDe5JF578f1t0EMLwcRX/RDWOSReB2AKUqXxONS6vxHR6Lr" +
+            "7buDn51IbnZjaMN3AAwRYJAUhgpeCCUeycpl9Be5XbXzdFosJy0/cyDxxYwr2124Wg14FUCk6EN4wYtY" +
+            "yY9rlSD4BRfEcoWCfcSgb832XyD6nEPvvAdRAg2Ue6C5pZGAQOES+CduJD7ZZYE+AnCPGdIFi86HVhjy" +
+            "BgmIlFgEnnoRX2WQ3HLLA3MM3LNdMN5pRstdowQIL32IlTnocwaktj2yAE8A25QZ1vsmnJ80SUC8woIv" +
+            "OHE2qwZbspJn5GSBC1MWtE40wzFt/WuEFQZUjoLuNo3GMQ1SGywyaz3VATK/NqeFY6ZDAuzFVtA5eh/4" +
+            "A12cM2P0Q0AW0OVptD1okQClTjVO3dDu6Sd0+0jD2DmkVrmqQOdsB6isdk9lVI2L5VJqu2uXDPf0oMkN" +
+            "tul2jK6HDwCBfOfeggcN3Jkl8bh86mN1O+q8FgMVDumVMFLLYbhuWnbE7cOl5lQNS400/eovsD9PNB1j" +
+            "xeV/olD8BvcKmN+Xvh37AAAAAElFTkSuQmCC</icon>\\r\\n    <clicks>1</clicks>\\r\\n  </Fav" +
+            "ourites>\\r\\n  <Favourites>\\r\\n    <url>https://notepad-plus-plus.org/</url>\\r\\n " +
+            "   <name>Notepad++ Home</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYA" +
+            "AAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALo" +
+            "SURBVDhPnZJrSJNRGMffD30xMIrMblpGeBuOpmVecFhBaJp9ECsLB5lU1ocUdxHb3Lyjcykqpqmvt5WC" +
+            "5rznhpq4RDEsqbwkhSEmeMl0us05nf92eUOlT/WDh/M8B37Pc87hEP/LOYLwD3NwYBMsFitbLBZ3czic" +
+            "OoFAQGZmZnay2ex6Y14lFIoUTCYzkHJ2kSJMmmA6OcURPB6vAka0Wh30Gwas6zexqtZAq9NDrdFBLpfr" +
+            "roaEPKQ8M7TjBO1l3mODueByueT65hZUai1W1Gs7VksMvhvC6NgEoqOjs8yCkd6c/cq0CCLdXJgaGIea" +
+            "RZOg0W1AtarB9Mws1vQGaNYNWNFuYGz8i8osGFluPgEq/XMCUwPjFXRbGB0eQ0ezApPfJ9HZ1Y2eXiVU" +
+            "Wi2mpqfMkky0t7Ek5lCpWTbB5fJIg0ELbOkhlAoROXsX/PY4zE0voEZaC4W8EYsr3fi5NAhXRzp9ufnY" +
+            "9nQTPC6fXF1XYnXlNZ703UEPslCv5iOvOw5FCxx0dN3HvIqDX5pytOWGf6znW7+iVAvxXBE5u5GE/oEw" +
+            "3BMH4zLLC7GpfngguoAUoS+GP0dDOeKJkaVIzMvO7p5uQpCQSnaMhiE/JRwZkkAUkZfQ1BKC4jpvcETu" +
+            "qO4JQ/sPJt6+d8MbCW2I0rZJjE8lG+YCINf4glPkh4TnNESkeaN81Af5g96Qzp/HsxlvDJRYQdZITlDa" +
+            "NqKENFL0yQvJ4x5I/uaO0GQGrqW5IUpxBjdqGAgt8EBQngeiak+ioq/Y8nl2kipIJwNbHXFF4YwgJQ3B" +
+            "/a4IULqAWU6HfxUdvq0u8JQ541TjQWQrMv9+g/TEdPJotRXsK21xRHoYtsawJg8YwxZ7SvaByCVgI7FB" +
+            "8IsQVA1WgkFjsCjVQkZShjSmJQaipiRIWp5C3CBGmaxssbS29GtheeGHytLKtoKcwurYR7E5t67fZtvZ" +
+            "2Z+mVAsuLq4+gReDbro50+nU1j9AEL8BolvNyov1lLoAAAAASUVORK5CYII=</icon>\\r\\n    <clic" +
+            "ks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://stackover" +
+            "flow.com/</url>\\r\\n    <name>Stack Overflow - Where Developers Learn, Share, &am" +
+            "p; Build Careers</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9" +
+            "hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFFSURBVDh" +
+            "PYxgaoNBaoPBSvvxlKJc88LlB5e/ScPFlUC5xoMNdpONzg/JPYS5mYSk+FqkvDSr/M835M6HSxIEVkZI" +
+            "rQRpjDHhjArV5AkFsc1kOc4gsHnAsU/Z4hjl/Bogdpc8bBdK4IFR84RQ/sak3ixVugRXhA7MCxWaDNH2" +
+            "uV/rV7SXSAxL7UK/8kahwUBNhU4MyGZKM+ZJuFMrfBBnW4yXSCxXGD4Ah/hWk4UWV0ssdCdI7Oz2Fu1J" +
+            "N+VPTzfjToUqwg84ZS7ZAmWAQoccbAfL3gVTpg5/rVf6BxDZ3FKGoQQGTFq79D6I3x0tuWR0luQYUAyA" +
+            "/LwqTWLw8QmIFSK575W6wGqwAZsCaSKG1S0IFlyJjkBhIrn/FdtwGTFuw8v+SksilS8pisWOg3JTF63A" +
+            "bMHX2wrXT5q/Ci0FqoMqpARgYAC48ovcLMup3AAAAAElFTkSuQmCC</icon>\\r\\n    <clicks>1</c" +
+            "licks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://www.codeproject." +
+            "com/</url>\\r\\n    <name>CodeProject - For those who code</name>\\r\\n    <icon>iVB" +
+            "ORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQU" +
+            "AAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGsSURBVDhPfZNPKINhHMcfJWUX44oLB2HXraU0LRnHhRInpXb" +
+            "YxUQrFgplZpOLNSMl/1LLxUFOyor8veDg5kLctuvia9/ntfU+e/DUp/d5n+f7fH+/5/c8j8A/7ermAsn" +
+            "1JLKZzM+I3gTezqHxnsbT5TE6e9rRH2jG4VEUn69pXZdHYNOCUj5i5fDYLejztyBx242ZnTbch62ajgg" +
+            "k8rswkVsTCHYJNDlqML7hxMqZWxJbqEd2VdUS1SApcDoqUFdbIaMHJwMYHnfDH/LCP9mB63ClsphoGfj" +
+            "ajegTkV5ZQJpElqKYXR5Daq5a0ZJ/DfZ2D6QB4f/JYpWiJX9uYWjKJtNmHVjE6ZgNL+EyZTH5tYjxQcO" +
+            "ER0iD0IrN2H9c1RLNgDALq8XYCk14pHchXUeKBozMY2KazKC1sUKmziMMzDfLMc5RQ61mwMvDAjI6BQM" +
+            "uow7cQuEOpHxGkanVDLhof0QYqeaLyWg0IYUxfmmiZsDCmOAkhcyEafNWsk/kTSzR52e8MPO85YHL3SB" +
+            "vIr92R1Oxvx10Kloi8JWDGT7dh8cH+ZSJuS+ftaLP4RvJq5xhURGkBAAAAABJRU5ErkJggg==</icon>" +
+            "\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>http" +
+            "s://www.iconfinder.com/</url>\\r\\n    <name>3,075,000+ free and premium vector ic" +
+            "ons. SVG, PNG, AI, CSH and PNG format.</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEU" +
+            "gAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAA" +
+            "BJ0Ad5mH3gAAAE6SURBVDhPtZI9S4JhFIYfkz6WkAokAofKQSqiobaGfkH9gRr6CS3SEjS2SYNELX1SE" +
+            "E3NLVEQDoE0GBE4tYYaBhFlXff7HMlIswZvuLjv95zznvfTtVp90O3j/xSGJSjAA8zBnxVC23gFrsire" +
+            "BImobk4YQ0+iM/wAlp0CYvQVEPwqgUN0J21B5P1xMCGBolPcE5Oq0a+gLJ6sEVuqGsb6PGHbgVuYQai9" +
+            "PZxPdI0/FAI7nwM7iaFZXVVXO+gqhKc+vilXhiDHERUQGc62Rac+JKL2XEZOoOKaYSGnn8T1mtqh7BDH" +
+            "laBvIvd41oyrlpVU/BG4wh/x/fwQTVMcWrHuL7QgS2YCDomDeetUZJbfoSCZf0Xs5CBG+iHb+qCZchCp" +
+            "WZJEdenHIV5WIA2+FV6qQkYgA4VWiTnPgEDkkxGkmNdagAAAABJRU5ErkJggg==</icon>\\r\\n    <c" +
+            "licks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://wordpr" +
+            "ess.com/</url>\\r\\n    <name>WordPress.com: Create a Free Website or Blog</name>\\" +
+            "r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAR" +
+            "nQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJVSURBVDhPbVPJbhNBEG1/ARwizvwC38A" +
+            "HIJAQAnHLISziB0CcQYIcOCCikEAYZzEhEkJiDVuAEAc0YvHg8RJbyHEcxzhjW8HEEzvdRb0a20wkSiq" +
+            "5Xd31qurVG6UikYh4z/YNDKiLU9NqPOEoy22J44wY7nrWzwsnX56JqdkczeUalNhq07Lni9uNHZrLN0g" +
+            "9yJG86Vk4V43a9rmlMpX8XTrxpmjUPVeraCpwPp98WzRJBhpcXCe87WZ1jVGHPpYpXvnDl45W02mtJtm" +
+            "nQj6Z0kdfrRpiO/2+FOoEc91fIZ8vrnzeMM/zdan+hH9HElUzyn79a8Wou0m92ZF8MeQEnDA5VqZGjba" +
+            "WiyOvV41U5NYlwCbjcAdj6Zr8X/ndpmimTkIsGF6u+TT0bk3gnxW2qDf7Uz7DLiyWAlArAB22N4xd90m" +
+            "2gzWBaXUnKZdAQbvg4Rh3g9hCmbkBqOXqYmuXDjzMm6XNFsmKwwCoDju1wFvghOEvFbOtg7kxAkZJNTu" +
+            "kxn5oyREAbgN7RtXDLwry+mWpKYA3snWKpj2Jnf9QMgcf5Q00osaTGjoJRmAiEBxkDnDhdclUMxlz83v" +
+            "V7Od28X9+rUm3vv0yhx7/NMd5NAESErEKVh8EBA3cdj0B+MTEqtmsVhOuLmx3JBYDwSOOlrec80/aLIq" +
+            "zrELHY2JiWanogGVmHexftSsSu8acQGxQ7B5Ji7E8AYId7/DzS/F1g+oC0l1ftW3oDCt2r5T/8zFZLJg" +
+            "4jxD+mCY4JuoLV+5/jWEQzAVywDDWBMcZsf7MbJIXifwFz79zu9b+xJcAAAAASUVORK5CYII=</icon>" +
+            "\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>http" +
+            "s://www.google.com/</url>\\r\\n    <name>Google</name>\\r\\n    <icon>iVBORw0KGgoAAA" +
+            "ANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcw" +
+            "AAEnQAABJ0Ad5mH3gAAAIKSURBVDhPjZLfSxRRFMfvHyGSpPmbhdoiQTSUQNQUoQx7k94Kegl7DKRC6i" +
+            "+QfPDBF92pHVnH1VY3il61HnyzdtY1bZWCvP7AHzuMu7OjX++5M7PtmmQfOMw9P+6Zc8497DQ1AlVVxx" +
+            "OJxLJlWVkSOpOtSuCGnU04HJ7COWiaNumGFxKPx5fcGJiz09i5fxfcXwx+pQg7vXdgzvzJret63L3m4P" +
+            "35OH2I7Xu3wOvKweurwK+XOVJfjY2rJSJpt0xA5Cqhnl0btno6wJv94NdKYIwrsH+swE6uwFAD2LxRi6" +
+            "P9PTfSoVLAaDik2N9U8MZSbPguwP65LgPOIxgMqowmTIr9pQbWewZz8rV0/g80N0bPREr2A0P2I8Pxwb" +
+            "x0erC+A/j6Uzm59DSFJ6Om9GUyGasggS0Eu3PS6ZGfoOmlgZuvDPTlJ/BawOdaGCJBdHFEqmcxGE2j7k" +
+            "UKg7NpqcsWvCH+XtNQrbSAjbUhuf9LBuTDxQP4nxvwP0thYdWWNjlEWk+pCdqnHuDy29soDrRi9KuGxG" +
+            "4S3/fWoS1F4BseQvOAhd4hp3yiQiB3gZaCDIdHGXROP0RZoB2VSidKxfeikAqlA+VvmtCg9MN0qkcoFJ" +
+            "qQlz1oPR0X8G75E3qij2UlRUK6Io+g6hHXC8RiMd29VohXyb/468+nofWk4dCE6ZlI6Ey2XM85GDsB3l" +
+            "i12W8FZFMAAAAASUVORK5CYII=</icon>\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\r" +
+            "\\n  <Favourites>\\r\\n    <url>https://trello.com/</url>\\r\\n    <name>Trello</name" +
+            ">\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAA" +
+            "ARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE9SURBVDhPjY/bSkJRGIQH38r7XsNnM" +
+            "AnLdLsxE6OUsteJLjpZUaFFBxLpSHbTVVe7rv7+WfuX9oJaODCsNTPrcyMwNx+j85Rg+13Qm8xmviVDF" +
+            "p1xgt6boP0iaD7/mnnrNfVfGxmy2NTQepTRJJGsmNkHN7Lo6iUe2+SLfXDrPugPbOglurfaF/vgRhbrI" +
+            "0Htzmpf7P/fbsWxWNNHy9dW+2If3MiifSNYurTaF/vgRhatK0F5YLUv9qgM5OPz25pUzOwdi9WhYOHcJ" +
+            "l/s3V65kBzP5jA9NbuexoqG0qkhvti7nW5kPO1oNM4Exb4hvlA8VkD3kBHrV0pH+r++DEvFzN7tzieZe" +
+            "yajrl+p9/XxgeR4Rv301Oz6oJXF4m6CSL9UOxRUFZqaOWQyZJEvxCjvJKjuK7g3o/UtmXwh/gFxCN7Ui" +
+            "bRpFgAAAABJRU5ErkJggg==</icon>\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n " +
+            " <Favourites>\\r\\n    <url>http://mimind.cryptobees.com/</url>\\r\\n    <name>miMin" +
+            "d - CryptoBees</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hA" +
+            "AAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHLSURBVDhPr" +
+            "VJNSwJRFH0gVNaqRctWQVL/IIP8BeH4gdboCH3uWkRgFLSRhAGxTUi1CBU32sJNm4IskKCiiFo4BEKYY" +
+            "EEKMlC0qOHlGd/DUXfRgcs4d845793jJf8Gk6nH3GseHLaMTzo9UjgXWE6qTimpoaSlpOr2h3P4Bg64T" +
+            "NYEGv0DQyNWW0B2iDvKZihbS2Xv6WHmluJ5efdCg1tHNcEbVaw2SQa3zQSuEM/M7ZejB3maPSnQ03yRV" +
+            "utftFRRKfD6/qn3XP5Y2TolydAwOSG4mjAbVXASxKjj3JNe3OBHo/T86pleNMrujSjQMDkhmA9XBIkb8" +
+            "FI/vnUDPPH+oLzRtY1MzS1u55icEISE0zmpUwzAvFCs6n1wfQsJlckJcfgTWrFU14mYE0SjmAMjwABcQ" +
+            "YxrTN40QEgAhDzATsAAucDAbjTwLyb0EYzAOy9uDsAYPXE+3hqBh8g4OjrzuHmssC+UrgTT7SGOjlkdW" +
+            "BLjLToNUAgSnGlPRIGGyfkiSbIrECsbTTArF+M3vjnF3e5Faq2yJGNJVtfTNZCxNFjnvdQ1RQ8nQ9y1y" +
+            "gAacMXVMB/+Z8GX0JA2AnP5QmeWsQmhr8HpEv8dhPwC3x4Jl3dKoAQAAAAASUVORK5CYII=</icon>\\r" +
+            "\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https:" +
+            "//tortoisegit.org/</url>\\r\\n    <name>TortoiseGit – Windows Shell Interface to G" +
+            "it</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IAr" +
+            "s4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI8SURBVDhPzZDdS1NxGMfPX" +
+            "aZ11Z1eFFFGL+swW5gX56aaLdLqgEhBlDkUtXwN17bWy1yiZQi20qVtOrdWc+V2zs4GFYvlKrWyiNZcV" +
+            "4roRTdhSmHBft/O7AxZf4Ef+F48z+/5PDz8qNXLepF1IlKZBnPadCvnWPOCPF+lklor7NlbUKAx9k9fv" +
+            "OGHtoOHxjQwR8sVCumZOtdgMMga7oBSsGTXobN9UvsfMlouv9D6GP4PCTI8BiTjn0gQXYcfh4tYNjnzY" +
+            "Ijj9xsdoLYrkX+kQr8spjB2Dk3zopCSU/G9SxB9az9qG/V6r//ZUnTyK16EQjC0WuxURd312zsVhYW0i" +
+            "OneGzwZJWlyMt63wIDdjl6bE4lEggSDQRKLRXGtzRKgVKxa/fR5CGxpGe4L34hPHP5/QYf9EyIj4WX5c" +
+            "zQOi9Uzd4Ctr5cOpyjl8crKPusAYl+iaOniIXwEuPfAo5E/GB4HelzjeBWJkMWFeRSfbGqStHQsVudPl" +
+            "8uFH/PfYe71oNvmE6WX8HIBvB6bgKWnGzRzKv3XUxSVnq+FRFFJZWx8bBThcBgcx0EQBDI4aMfU1BRp1" +
+            "l4lkpJOo669PR6fJDXV1ZDtK76bu/sgZmdnSHLhkPshzlRpF81mMxEEP3K2MYykrbBVxjButwdOp4Por" +
+            "ty0baKPdv1e+gWe52G1WklZlWbG4XCi5IQaazIyMyUtnS20SqUsLg9kb87LS9bltW29l1s6UV13CRt3M" +
+            "MyG7NzcjLVZWcvDqwiK+gv8Rl3yG6IU/wAAAABJRU5ErkJggg==</icon>\\r\\n    <clicks>1</cli" +
+            "cks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://bitnami.com/</url>" +
+            "\\r\\n    <name>Bitnami: Packaged Applications for Any Platform - Cloud, Container" +
+            ", Virtual Machine</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/" +
+            "9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF2SURBVD" +
+            "hPY8AJRFR92OyyzrPYJ+5nEVWygYqSAMyST/IEdPwHYZHoif95LWMWMnLyy0BlsQBWLlEGJbsGKA/DAJ" +
+            "nkGf8VU2d8FbEMbmRgYeeBqoICaaMMBpuitwxmqZehIgwMxnEHWTTc2kE2wwxQy1sExlrZMx7zqxh5gN" +
+            "WBneVc85/RvuI/igFItjDySeiLeBcdhBkAwtyeNS8hkux8CiDNYGwYhzAAC+BRMQsDeQlkIRiDAMgAFo" +
+            "v8/yCMbADIVlAMMFgGrkQJPPuKnzgNYNUMhRvAo6x5kt0r/T8IC6gaLYcKYzeA3RioEIiRDRCQlDgtqq" +
+            "T4X87CmzwDmNlY9fjFxXeDNIPUQIXxG8BskvaaQUDOHiyBDYhphsI1wwwAJSBwAIKiESahG7Qa2VZQgI" +
+            "LSBYpmULqBA1hCQlYAciooZWp4zUIRB2GQWmBegeqGAlBSxqYYGcMMxUjKSACrc0FYN3gtSmASBKAAAy" +
+            "VtYKbCHbAMDACnFM2vmMoUAwAAAABJRU5ErkJggg==</icon>\\r\\n    <clicks>1</clicks>\\r\\n " +
+            " </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://about.gitlab.com/</url>\\r\\n" +
+            "    <name>The first single application for the entire DevOps lifecycle - GitLab " +
+            "| GitLab</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAAAXN" +
+            "SR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJFSURBVDhPY4ABQVZ" +
+            "m4RwF4SooFyfIkheqEGVjEYdyEcBRmMfzqp3qewl2FmmoEAYQAWq8aKvyxl2UNxAqhABN6hKTP7jr/A+" +
+            "S4I+FCmEAbzG+0Pfu2v87NSRmQ4UggIuZiWe/heLNN27a/6fpSq+CCmOACdqSi0Bqjloq3+dlYeKHCjM" +
+            "wWPJzOT500Pj72Enz/1lr5RcCLMzCUCk44GFm4jthqfLkCVDNY0fNf/aCPB5QKQaGVluRnm/xGv/fR6v" +
+            "9+xSr/n+RhdTGNjXxGe0aEAxizzeXXvcBKA/CILU9jqKTwZo52Rg5L3XIXfnfovb/b67a/38Fav9/JGj" +
+            "8f+mi9f+VKwSD2D+AmkByIDX/m9X+X++Sv8XDwcTDYK/J6fB3qdr/PwvU/v8qU/33JwdoQIbqv8euGv8" +
+            "eOWv+B2MXjX/f0yFyv0qB9HygRcvU/7vpcrszmCpxmD2aovDk/0r1/79mqP77lQ9UALTlhb/6v4dA/4L" +
+            "wCz91sBhI7td01X8gtU+nKj23VuO0BntDTZJNfVupzPb/q9T//5kIdGae2v8PMWpwA95Hqf0Dif3pBzo" +
+            "fqGZ3pfQeLWk2LbBmGGBnZeSoDRSq+7JA5dv/TvX/31NB3gCGOBB/TwHa2qH+/9tClR9NoSLNoHCDasM" +
+            "Errqcblc65a//b1L//9JX4/9zL/V//xvU/9/oVrjlacDtBVWGH0gKskgtThVf8jVF4//XZI3/K9IlV8o" +
+            "Is8hCpYkDTEwMTGlG/FlZxgJ5zMwMzFBhNMDAAAAL0wS8oLPD8QAAAABJRU5ErkJggg==</icon>\\r\\n" +
+            "    <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://" +
+            "github.com/</url>\\r\\n    <name>GitHub</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUg" +
+            "AAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAAB" +
+            "J0Ad5mH3gAAAF/SURBVDhPjVJNS8NAEF0CVaQfpOlms0m2UaT+C73lLAj+DEHwJxWKoOjBg0c9eRbEtp" +
+            "49CIJeiuhJ4rztbEjFtD54NDPz3nZ2dsRvBO12mvX7wygMx5GUH5b0jRxqLPsbfWNOSVwoKQv8Vuly0L" +
+            "B8EYlSD6oirCM00LJtDpyKAgkmO4PBsZTyudftFtT+G7jueUWk1EuaJCe617uHtuwE93Knx1F0bpNLEG" +
+            "ttrwnamWA4ru1E62vW1SKJ40to4YFXUDB2J7JmJZweXsHPVGw0Gt9cX4lYqZk9gLyCWvlCoJX6dwfQwk" +
+            "PeT6GlnCLApPcJrKmF3+ns2n+fdzAVxpiRS6x53ox1tQh8/xVaPGUWhiPh8zPSvY4ypW7sMgXBXZ7nh+" +
+            "wRtBcHVL+1u0F1R+omsYLMmDNqx84gVeqKlmZiCxVUjSA8XJojDsMnGsp7u9XaazWb25wu4QYH0io/cn" +
+            "oRNI8LJ+RUCU05ME3T5dtK9zJbWg85LIGt831/k0OGED/G/5F82dlOdgAAAABJRU5ErkJggg==</icon" +
+            ">\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>htt" +
+            "ps://jenkins.io/</url>\\r\\n    <name>Jenkins</name>\\r\\n    <icon>iVBORw0KGgoAAAAN" +
+            "SUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAA" +
+            "EnQAABJ0Ad5mH3gAAAHLSURBVDhPrVJNSwJRFH0gVNaqRctWQVL/IIP8BeH4gdboCH3uWkRgFLSRhAGx" +
+            "TUi1CBU32sJNm4IskKCiiFo4BEKYYEEKMlC0qOHlGd/DUXfRgcs4d845793jJf8Gk6nH3GseHLaMTzo9" +
+            "UjgXWE6qTimpoaSlpOr2h3P4Bg64TNYEGv0DQyNWW0B2iDvKZihbS2Xv6WHmluJ5efdCg1tHNcEbVaw2" +
+            "SQa3zQSuEM/M7ZejB3maPSnQ03yRVutftFRRKfD6/qn3XP5Y2TolydAwOSG4mjAbVXASxKjj3JNe3OBH" +
+            "o/T86pleNMrujSjQMDkhmA9XBIkb8FI/vnUDPPH+oLzRtY1MzS1u55icEISE0zmpUwzAvFCs6n1wfQsJ" +
+            "lckJcfgTWrFU14mYE0SjmAMjwABcQYxrTN40QEgAhDzATsAAucDAbjTwLyb0EYzAOy9uDsAYPXE+3hqB" +
+            "h8g4OjrzuHmssC+UrgTT7SGOjlkdWBLjLToNUAgSnGlPRIGGyfkiSbIrECsbTTArF+M3vjnF3e5Faq2y" +
+            "JGNJVtfTNZCxNFjnvdQ1RQ8nQ9y1ygAacMXVMB/+Z8GX0JA2AnP5QmeWsQmhr8HpEv8dhPwC3x4Jl3dK" +
+            "oAQAAAAASUVORK5CYII=</icon>\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <F" +
+            "avourites>\\r\\n    <url>http://www.jrsoftware.org/isinfo.php</url>\\r\\n    <name>I" +
+            "nno Setup</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAX" +
+            "NSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALuSURBVDhPtZJrSN" +
+            "NhFMbPNoezLCtLzQmzkpXWFLUaBmUfCkKWUiJWKroMjG4aWbBQMboKFSJ2o8TMG13xUhauMG1mkZWRXZ" +
+            "ZlSc1rcxtTt6nz6d38VxB+7YHfp3Oe55z38NJ/kchLIhHHqlSS/bduz9lfr3aJvVpCIUolCadP51qmFo" +
+            "8vECxJOXZ8+/0+m0pjwIEmA+JqBxB0+QeEqnZQXEUvLY6J4dr/EY/HW5pZVq56YkBV5wg0PTbc67Lg7B" +
+            "sztqgHIS7SgVTPQIp8O8m2pnCuv5q5Ni0tvrofFdphfDaNwWiz4/3gKCo7RrCv2QjZzX7QmQ+gnddBq3" +
+            "aN0LygIM7KxFYXn/j4Pe2hHrXfLPhpGceg1Y53LKCCBezVcAH5WlBmDSgqC+S/upQ5BZMBYrnc+1Qndj" +
+            "fo0dpvRWO3FU97/z5h26NB+JX1YsGFN0itaMGOwltQ5uZbBJLg+MmAZYmJ7kfaUfzBhGOtBuS1mVHwdg" +
+            "jHX5mxo9GAlXcGIC35gna9FfYJYIJhHgNc/IP3TQaEJyVlqzuQWq9zNkc/0COOHS6qTo8Qtrr7uU9YV/" +
+            "IKaaWPoTMOw6GRcUeALN3pjzyUX9NhGoUotwEu57/Cg13c82o3Zlz5AX7hF9DJVnhl3cH1Fx0wWcfQbz" +
+            "Rj+HcA31cqrW5+PaHtM4KUl0DZDaATz50mOtqMGYerkXGzBT1mq9McnZ4LdZsWpWqNjXkV5BKwIsVgHc" +
+            "c4e1fBXQ3kWcUIySlH7Pk6XHjUhr4hq7Om7R5AhPIgKHQj9pwtsk2TLk9gy/sQf2HY5q8DJudhHIw5sO" +
+            "PPsRxT80qr4BG5FRS+CRSwxs7zk+12molciYSuroq9WS91xiGwv4NRBvsGaO/qQc7FcvitTwCFKECB60" +
+            "F+8j7yDEhmxvkMNwYnoUg0LTAiPTgm+VpYbGqlT8SG0+QrO0W+ofdIHNpE84Nv0FxpBgndFrFubwabPL" +
+            "UcqR4c7hyzGXMYsxiOOo/BiegXFy/Nni4u2YoAAAAASUVORK5CYII=</icon>\\r\\n    <clicks>1</" +
+            "clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://www.python.org/" +
+            "</url>\\r\\n    <name>Welcome to Python.org</name>\\r\\n    <icon>iVBORw0KGgoAAAANSU" +
+            "hEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEn" +
+            "QAABJ0Ad5mH3gAAALfSURBVDhPfZF7SNNRHMUvRH8EESSkokQQRoRkGeVrvnVO3VY6TTFMTUMqNXyl+F" +
+            "hO03SpiBrqDC2t7O18p/NRaWzms1R8oJUVSiMNy1Jij9N1/aAS9PPXhXvOPd/zvWQ9+90CA61TG0Y4OZ" +
+            "0/PbPbwM5o0rgKpUqL8ILHjGRzOEXD+LaqwuWaPrikN4KdJoVz8gM4Jt2HWYCwlpFtDLewDy2DnxBS/A" +
+            "yuogY4pzyCQ+Jd2MVX46B/yjgj2xjbyOsDB05nKcyDMuTmp4TdTjTdLr4KrJhKmJ5MHGNk/yMoVkz7lg" +
+            "7Bu0gBrrgD7pktYIvqdOn2l6rBiq6AdZQExD5agdVQYCEAstsW7TozRyRtFBT34njec3BzZHC/0sz0fg" +
+            "iHhDuwjbmpM1tGlIBYxXTjsw80057ArAsEbD0B8S7qnT+R/wI8muyR1QI3UT1chU/gRJdmT3vb0HTLiF" +
+            "KYhEmQnBl1Dx88oJ5wAiasUJZmJCFeBT3gX+uE59Wn4KQ3wCa5Hjt8xP3ELUVOXBPlxDFOQaxie5Iyo2" +
+            "vn5A7z2iknqEetgBEztJUYyQgvt+vX2n9zMprASm1EWUlo+cpS1CpWYoHv54DFIEDpi7Vk7ZSzzqwaNg" +
+            "OGTNBcoNdCeOKuMffMZt3o+gGFA8sLET/wNR5a5Xlo54KhmfWDZoYH9eRfs6rfBBgwRu7FbXnEzD8x3y" +
+            "OrlS6uDlu5oldYiaPmC9QcQlP96LL4wLQL7WxNxz5Ek/dB22dMH9gJQz1iqPuJY6HimqOh2VPE/Ew1li" +
+            "P+mD/6QdnPWWqtPPJSVmEql90wkXeW7+7rrdQf66/YPhop2BKpM68HS+HQ0GTNDJ92Xku2AV4bAsN6kF" +
+            "cYvGFkG4PFQGje8mlnF6jHrKEaNIB29R3wpR69EjLEyDZGLmUp8J4NTNLk0cO08x56DgPG3SAMJkJGtj" +
+            "kJZ40Tagv3Smnn7vaSXR23UkmVly3xYq7/gZDfi8bVSEmjDtsAAAAASUVORK5CYII=</icon>\\r\\n   " +
+            " <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://www" +
+            ".ruby-lang.org/en/</url>\\r\\n    <name>Ruby Programming Language</name>\\r\\n    <i" +
+            "con>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx" +
+            "jwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANGSURBVDhPfZJ/TJR1HMc/PPfcc3fPPffjOR5gzqB5" +
+            "ZnNrNaYw28o511/90/onBvVPa21lLoW21tKFBMJhCJZ30KlwyEHInSTCcQoMJVGbZU62pjYauaaFWa2t" +
+            "0Walz7v3HWz90dZne+37Y5/3+/P9fL9f+b8wzaDZHdnbM5kemhqr3ZHJlJWMj3s92VGfI7vNq25bSftv" +
+            "VNfU1FyPx25ctgSzIrhElmbPYGLj4zjG+cd+De1BD14JuD9YkfwbO19/bedsZTnSTJzwCc6EFMxwfncw" +
+            "iXvz39iJVYX3owGXnTNo8jt/WpEtR/2bb9SPMHmYjAcEp/2CqWABJri+tedtXAkbmNvwCHos/f5u3Yl3" +
+            "XMofK1KRxt3vNqWYmPIKTgYFGRpkSYZ7559/FldefhETNDxVpGOyyINOr8PerspiXqwyRp+uRJ+T1U3B" +
+            "CBnNmZABGvx+4xr6OB7TC5B0CQ5rghj50CHX8wZnY9GZZiYcZYVUaNnkBMej3Fs4kcKDX362YyJ2kgV6" +
+            "c0JSTxIiF2VjRUVF39oyNDI5zuMnaTJE8RGuv+6I4G7kfdzZ8SpS4VI7yr2DFB4gLTTrF8lKOjV0PHfL" +
+            "BwwXWhx057yDzPcewtVnNuPz9aW49NgafPqQZe/nfivF75EupQDdIinpb28fuLlnFz4zBHxUJKqq8OtX" +
+            "X2CK89N8xlMhd54R023vVQUNpMmvIq4p6NG0hPC9j/+9+AOW5q7iz4Vvgb/usU8LXTQY0BWkyTAvL0cD" +
+            "j93gUbCvUGWrOlq9RquMlQYy01u24LeOVvz41nZ8/9IL+f57eNtdPGr7MjZv3m52C9pCTkT4uVJWAHVG" +
+            "qE6Gi/SZXgq+21yJhSfLcXFNmL25EadBJ8UdpJGVW5wKxowg9psqmvhKn5QEUGWYVdJveicTXgPZkmJ8" +
+            "GS5D2lOMbs2FThq0UZzrOe7xYDpYhHPFqzG3ei2ilo6YpWCT7t8kdbq7LhkwEPXpOKnpGGD/R1wqoqwa" +
+            "oUnS78OkVYILq0px7eFHsbjuCTwofwoX1odhqaqV/0i7fO59baZ+u0/zLg1qgTuHPY75aFC73BXSpz8K" +
+            "uUbaTHXwYKHzUG2hND+nS221X6neappbRUT+AbL4nOW+jSA4AAAAAElFTkSuQmCC</icon>\\r\\n    <" +
+            "clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://www.d" +
+            "ocker.com/</url>\\r\\n    <name>Enterprise Container Platform | Docker</name>\\r\\n " +
+            "   <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1" +
+            "BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF3SURBVDhPYxjkoHjVKYayteegPDJA7a7bDPV" +
+            "7HkB5RICy9RcYJl35y1C+/hJD7/kvYANaj7yAykJAQHkflIUExFT1GKS0TRmSp6xnqNl6gyF16kagIRc" +
+            "ZchYcAHrjNAOnsCRYXtPel2Hus/8MMZ1LoDqhAOTXOU/+M9TuvM0w/c5/sCEgl7QdecXQeeo9Q/+FHww" +
+            "dJ98yGPpEM0y/+59hwqWfDM37nzAkTVzLwOCSVs2QPX8fQ/XWmwz5Sw4zVG+5BqbLN1wCG1y65gzQa+f" +
+            "B7OiORQxTb/0HWzLrwX+G4JopDAzdZz8zTLv9n2HKzf9gSRg9FUYjsUHqQC4AGQQHjfsegjVNvk4Yg9R" +
+            "1nvwA1QkFWfN2gU3GpgEdz7j3n8EiLB2qEwpAoQty1uQbmBpgGGQzSHNIzVSoLjTgX9bLMA0YMCAM9zf" +
+            "UzyCN7cDYcEgsgarGAyJb5jLkLTrIULTsODAmjjAk9K9i0PeMAMspGNmB6UEGGBgASZT83lVnnw0AAAA" +
+            "ASUVORK5CYII=</icon>\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourit" +
+            "es>\\r\\n    <url>https://developer.android.com/studio/</url>\\r\\n    <name>Downloa" +
+            "d Android Studio and SDK tools  |  Android Developers</name>\\r\\n    <icon>iVBORw" +
+            "0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAA" +
+            "AJcEhZcwAAEnQAABJ0Ad5mH3gAAAB+SURBVDhPY0AHjRfi/kOZGACfHAoAKaw5EYWCSdIMokGaKg6Fgz" +
+            "GIjSyHE4AUwDTANCMbAqLxGgKSBCnEhwm6gmSAbCopLoCpZYD5DyQIopH9jQ2jqx0EBoAYMH+RYgA8DJ" +
+            "ABKQZgBTBTkRWj82GuxQtgGqFcDD5BQEcDGBgAVpphuLBsh2YAAAAASUVORK5CYII=</icon>\\r\\n   " +
+            " <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://www" +
+            ".eclipse.org/</url>\\r\\n    <name>Enabling Open Innovation &amp; Collaboration | " +
+            "The Eclipse Foundation</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAA" +
+            "AAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFpS" +
+            "URBVDhPYxh8oNZPuHZmvNisCk/BClZmRlaoMGHQFCDY/HiKwpN8V/58qBCDtQqHNZSJHxS7CxbfbJW7B" +
+            "eWSDj4sUPkAZZIOLBU5LPeVSe+Hchl0tLQaHR0dXjs7ObyB4o/mZqbd5uamK5DF3VydvoI1BDlwBM2JF" +
+            "5sL5gCBpqbGJEcH2y8a6qolmprqtVpaGo0KCvKOpibGR22tLK8CxSqAYvU6OlqtUC0MDGtzpNdBmWADn" +
+            "Bztn0O5cGBuZnIciDdAuahgXqLYfCgTZECfg53NfxdnRzB2dXH6r6OtWWZqbLTP3t72r4sz0AvODu/d3" +
+            "V0fQrUwMPBzMvGn2fOlgdhgFzg5PAVLIAEzU+NjttaW5zQ01DKA3ijQ1dHKhkqhAlV1jUn2drY/LS0tp" +
+            "lpYWMwB4gVaWpohJibGxy3MTHdCleEGOjralY4O9vccHOzA2MnR7rGxsVGThZnJYitLizlQZcMHMDAAA" +
+            "FOda6rSm1chAAAAAElFTkSuQmCC</icon>\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\" +
+            "r\\n</DocumentElement>")]
         public string favouritePages {
             get {
                 return ((string)(this["favouritePages"]));

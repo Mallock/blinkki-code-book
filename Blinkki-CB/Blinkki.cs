@@ -22,6 +22,8 @@ namespace Blinkki_CB
             InitializeComponent();
 
             dockPanel.DocumentStyle = DocumentStyle.DockingWindow;
+            //dockPanel.DocumentTabStripLocation = DocumentTabStripLocation.Bottom;
+
             dockPanel.Theme = new WeifenLuo.WinFormsUI.Docking.VS2012LightTheme();
             DockPaneStripSkin dockPaneSkin = new DockPaneStripSkin();
             dockPaneSkin.DocumentGradient.DockStripGradient.LinearGradientMode = LinearGradientMode.Vertical;
@@ -51,11 +53,6 @@ namespace Blinkki_CB
             this.Close();
         }
 
-        private void btnStackOveflow_Click(object sender, EventArgs e)
-        {
-            OpenNewTab("https://stackoverflow.com/");
-        }
-
         public void OpenNewTab(string url)
         {
             web_view web = new web_view(this, url);
@@ -66,21 +63,6 @@ namespace Blinkki_CB
         {
             web_view web = new web_view(this, url, false);
             web.Show(dockPanel, DockState.DockLeft);
-        }
-
-        private void btnGoogle_Click(object sender, EventArgs e)
-        {
-            OpenNewTab("https://www.google.com/");
-        }
-
-        private void btnGitHub_Click(object sender, EventArgs e)
-        {
-            OpenNewTab("https://github.com/");
-        }
-
-        private void btnIconFinder_Click(object sender, EventArgs e)
-        {
-            OpenNewTab("https://www.iconfinder.com/");
         }
 
         private void btnChat_Click(object sender, EventArgs e)
@@ -137,6 +119,32 @@ namespace Blinkki_CB
             settings.Locale = CultureInfo.CurrentCulture.Name;
             Cef.Initialize(settings);
             OpenNewTab("https://code.blinkki.com/");
+            LoadFavouriteTools();
+        }
+
+        private void LoadFavouriteTools()
+        {
+            Favourites favs = new Favourites();
+            favs.LoadFavTable();
+            DataRowCollection rc = favs.GetFavs();
+            foreach (DataRow r in rc)
+            {
+                ToolStripItem tItem = new ToolStripMenuItem();
+                tItem.Tag = r[0].ToString();
+                tItem.Text = "";
+                tItem.ToolTipText = r[0].ToString();
+                tItem.ImageScaling = ToolStripItemImageScaling.None;
+                Bitmap ico = favs.BytesToBitmap((byte[])r[2]);
+                tItem.Image = ico;
+                tItem.Click += TItem_Click;
+                mainTools.Items.Add(tItem);  
+            }
+        }
+
+        private void TItem_Click(object sender, EventArgs e)
+        {
+            ToolStripItem tItem = (ToolStripItem)sender;
+            OpenNewTab(tItem.Tag.ToString());
         }
     }
 }

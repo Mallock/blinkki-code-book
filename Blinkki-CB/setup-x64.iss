@@ -22,6 +22,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={userappdata}\{#MyAppName}
 DisableProgramGroupPage=yes
 OutputBaseFilename=blinkki-cb-x64-setup
+InfoBeforeFile=Terms.rtf
 SetupIconFile=blnk_ico.ico
 Compression=lzma
 SolidCompression=yes

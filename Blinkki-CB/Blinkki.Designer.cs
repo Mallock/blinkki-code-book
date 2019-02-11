@@ -39,10 +39,6 @@
             this.btnFavs = new System.Windows.Forms.ToolStripButton();
             this.btnBlinkki = new System.Windows.Forms.ToolStripButton();
             this.btnChat = new System.Windows.Forms.ToolStripButton();
-            this.btnGoogle = new System.Windows.Forms.ToolStripButton();
-            this.btnStackOveflow = new System.Windows.Forms.ToolStripButton();
-            this.btnGitHub = new System.Windows.Forms.ToolStripButton();
-            this.btnIconFinder = new System.Windows.Forms.ToolStripButton();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.mnuMain.SuspendLayout();
             this.mainTools.SuspendLayout();
@@ -57,6 +53,7 @@
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
             this.mnuMain.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.mnuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMain.Size = new System.Drawing.Size(1409, 28);
             this.mnuMain.TabIndex = 0;
             this.mnuMain.Text = "menuStrip1";
@@ -103,28 +100,30 @@
             // 
             // mainTools
             // 
-            this.mainTools.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mainTools.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.mainTools.GripMargin = new System.Windows.Forms.Padding(0);
+            this.mainTools.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.mainTools.ImageScalingSize = new System.Drawing.Size(26, 26);
             this.mainTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnFavs,
             this.btnBlinkki,
-            this.btnChat,
-            this.btnGoogle,
-            this.btnStackOveflow,
-            this.btnGitHub,
-            this.btnIconFinder});
-            this.mainTools.Location = new System.Drawing.Point(0, 28);
+            this.btnFavs,
+            this.btnChat});
+            this.mainTools.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.mainTools.Location = new System.Drawing.Point(0, 700);
+            this.mainTools.MinimumSize = new System.Drawing.Size(0, 0);
             this.mainTools.Name = "mainTools";
-            this.mainTools.Size = new System.Drawing.Size(1409, 27);
+            this.mainTools.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.mainTools.ShowItemToolTips = false;
+            this.mainTools.Size = new System.Drawing.Size(1409, 33);
             this.mainTools.TabIndex = 5;
-            this.mainTools.Text = "toolStrip2";
             // 
             // btnFavs
             // 
             this.btnFavs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnFavs.Image = global::Blinkki_CB.Properties.Resources.no_fav;
+            this.btnFavs.Image = ((System.Drawing.Image)(resources.GetObject("btnFavs.Image")));
             this.btnFavs.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFavs.Name = "btnFavs";
-            this.btnFavs.Size = new System.Drawing.Size(24, 24);
+            this.btnFavs.Size = new System.Drawing.Size(30, 30);
             this.btnFavs.Click += new System.EventHandler(this.btnFavs_Click);
             // 
             // btnBlinkki
@@ -133,7 +132,7 @@
             this.btnBlinkki.Image = ((System.Drawing.Image)(resources.GetObject("btnBlinkki.Image")));
             this.btnBlinkki.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnBlinkki.Name = "btnBlinkki";
-            this.btnBlinkki.Size = new System.Drawing.Size(24, 24);
+            this.btnBlinkki.Size = new System.Drawing.Size(37, 24);
             this.btnBlinkki.Click += new System.EventHandler(this.btnBlinkki_Click);
             // 
             // btnChat
@@ -142,52 +141,16 @@
             this.btnChat.Image = ((System.Drawing.Image)(resources.GetObject("btnChat.Image")));
             this.btnChat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(24, 24);
+            this.btnChat.Size = new System.Drawing.Size(30, 30);
             this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
-            // 
-            // btnGoogle
-            // 
-            this.btnGoogle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnGoogle.Image = ((System.Drawing.Image)(resources.GetObject("btnGoogle.Image")));
-            this.btnGoogle.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGoogle.Name = "btnGoogle";
-            this.btnGoogle.Size = new System.Drawing.Size(24, 24);
-            this.btnGoogle.Click += new System.EventHandler(this.btnGoogle_Click);
-            // 
-            // btnStackOveflow
-            // 
-            this.btnStackOveflow.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnStackOveflow.Image = ((System.Drawing.Image)(resources.GetObject("btnStackOveflow.Image")));
-            this.btnStackOveflow.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnStackOveflow.Name = "btnStackOveflow";
-            this.btnStackOveflow.Size = new System.Drawing.Size(24, 24);
-            this.btnStackOveflow.Click += new System.EventHandler(this.btnStackOveflow_Click);
-            // 
-            // btnGitHub
-            // 
-            this.btnGitHub.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnGitHub.Image = ((System.Drawing.Image)(resources.GetObject("btnGitHub.Image")));
-            this.btnGitHub.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnGitHub.Name = "btnGitHub";
-            this.btnGitHub.Size = new System.Drawing.Size(24, 24);
-            this.btnGitHub.Click += new System.EventHandler(this.btnGitHub_Click);
-            // 
-            // btnIconFinder
-            // 
-            this.btnIconFinder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnIconFinder.Image = ((System.Drawing.Image)(resources.GetObject("btnIconFinder.Image")));
-            this.btnIconFinder.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnIconFinder.Name = "btnIconFinder";
-            this.btnIconFinder.Size = new System.Drawing.Size(24, 24);
-            this.btnIconFinder.Click += new System.EventHandler(this.btnIconFinder_Click);
             // 
             // dockPanel
             // 
             this.dockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dockPanel.Location = new System.Drawing.Point(0, 55);
-            this.dockPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.dockPanel.Location = new System.Drawing.Point(0, 28);
+            this.dockPanel.Margin = new System.Windows.Forms.Padding(0);
             this.dockPanel.Name = "dockPanel";
-            this.dockPanel.Size = new System.Drawing.Size(1409, 678);
+            this.dockPanel.Size = new System.Drawing.Size(1409, 672);
             this.dockPanel.TabIndex = 6;
             // 
             // Blinkki
@@ -201,6 +164,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuMain;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(50, 0);
             this.Name = "Blinkki";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Blinkki - Code Book";
@@ -222,10 +186,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStrip mainTools;
         private WeifenLuo.WinFormsUI.Docking.DockPanel dockPanel;
-        private System.Windows.Forms.ToolStripButton btnStackOveflow;
-        private System.Windows.Forms.ToolStripButton btnGoogle;
-        private System.Windows.Forms.ToolStripButton btnGitHub;
-        private System.Windows.Forms.ToolStripButton btnIconFinder;
         private System.Windows.Forms.ToolStripButton btnChat;
         private System.Windows.Forms.ToolStripMenuItem applicationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calcToolStripMenuItem;
