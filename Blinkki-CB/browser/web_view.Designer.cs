@@ -38,10 +38,10 @@
             this.btnBack = new System.Windows.Forms.ToolStripButton();
             this.btnForward = new System.Windows.Forms.ToolStripButton();
             this.btnReload = new System.Windows.Forms.ToolStripButton();
-            this.txtToolUrl = new System.Windows.Forms.ToolStripTextBox();
+            this.btnHome = new System.Windows.Forms.ToolStripButton();
             this.btnFav = new System.Windows.Forms.ToolStripDropDownButton();
             this.linkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnHome = new System.Windows.Forms.ToolStripButton();
+            this.txtToolUrl = new System.Windows.Forms.ToolStripTextBox();
             this.pnlBrowser.SuspendLayout();
             this.browserContextMenu.SuspendLayout();
             this.browserTools.SuspendLayout();
@@ -131,12 +131,14 @@
             this.btnReload.Size = new System.Drawing.Size(23, 20);
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // txtToolUrl
+            // btnHome
             // 
-            this.txtToolUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtToolUrl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtToolUrl.Name = "txtToolUrl";
-            this.txtToolUrl.Size = new System.Drawing.Size(780, 22);
+            this.btnHome.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(23, 20);
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnFav
             // 
@@ -158,17 +160,15 @@
             // 
             this.linkToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.linkToolStripMenuItem.Name = "linkToolStripMenuItem";
-            this.linkToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.linkToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
             this.linkToolStripMenuItem.Text = "link";
             // 
-            // btnHome
+            // txtToolUrl
             // 
-            this.btnHome.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(23, 20);
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.txtToolUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtToolUrl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtToolUrl.Name = "txtToolUrl";
+            this.txtToolUrl.Size = new System.Drawing.Size(780, 22);
             // 
             // web_view
             // 
@@ -181,6 +181,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "web_view";
             this.Text = "Browser";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.web_view_FormClosing);
             this.Load += new System.EventHandler(this.web_view_Load);
             this.Shown += new System.EventHandler(this.web_view_Shown);
             this.pnlBrowser.ResumeLayout(false);

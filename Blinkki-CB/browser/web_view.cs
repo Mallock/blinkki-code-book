@@ -448,22 +448,15 @@ namespace Blinkki_CB
                 LoadUrl(System.IO.Directory.GetCurrentDirectory() + "/fav.html");
             }
         }
-    }
 
-
-    class MyClient : WebClient
-    {
-        public bool HeadOnly { get; set; }
-        protected override WebRequest GetWebRequest(Uri address)
+        private void web_view_FormClosing(object sender, FormClosingEventArgs e)
         {
-            WebRequest req = base.GetWebRequest(address);
-            if (HeadOnly && req.Method == "GET")
-            {
-                req.Method = "HEAD";
-            }
-            return req;
+            this.pnlBrowser.Controls.Remove(browser);            
+            browser = null;
+            Thread.Sleep(200); //Prevent browser close freezing
         }
     }
+
 
     public class MainFormToolStripRenderer : ToolStripProfessionalRenderer
     {

@@ -310,7 +310,29 @@ namespace Blinkki_CB {
             "V0fQrUwMPBzMvGn2fOlgdhgFzg5PAVLIAEzU+NjttaW5zQ01DKA3ijQ1dHKhkqhAlV1jUn2drY/LS0tp" +
             "lpYWMwB4gVaWpohJibGxy3MTHdCleEGOjralY4O9vccHOzA2MnR7rGxsVGThZnJYitLizlQZcMHMDAAA" +
             "FOda6rSm1chAAAAAElFTkSuQmCC</icon>\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\" +
-            "r\\n</DocumentElement>")]
+            "r\\n  <Favourites>\\r\\n    <url>https://robotframework.org/</url>\\r\\n    <name>Rob" +
+            "ot Framework</name>\\r\\n    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAA" +
+            "AAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADVSURBVDhPpdN" +
+            "BEcIwFATQnlHACREYQAImsIAKTMAZAXCqESRggBv8F/oZOoRSpjuzNPzsbn7StOmwCJ6D95Gk5SkwOAZ" +
+            "vQRP74OELzdHQ8pSQLOyCM4UfoKHNBUtLp+AYc4KWh7f8aC2xCm6753uosdq8/Ht6XgH2B+vgNaimxU0" +
+            "Q7JVBTTjwfAQQCWC8BNugFT2Z6fL0qwE6sIJ2haCxWo4T1YB/UA3QroMaYh5iNUCr9jpEdwB6Afkal0E" +
+            "hQ6SB3mucdJEmX+XJHxMYmNDSGNKGp2kegMNz74V8RpIAAAAASUVORK5CYII=</icon>\\r\\n    <cli" +
+            "cks>1</clicks>\\r\\n  </Favourites>\\r\\n  <Favourites>\\r\\n    <url>https://slack.co" +
+            "m/</url>\\r\\n    <name>Where work happens | Slack</name>\\r\\n    <icon>iVBORw0KGgo" +
+            "AAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEh" +
+            "ZcwAADsMAAA7DAcdvqGQAAAJ5SURBVDhPY0AHfC4hUYabbzzTXnjsIlSIQW1m5nXNBfmPOHTlnKBCuIH" +
+            "2oqMXzE9+/W9x+vt/xYZFy+WaAnbq7278r7+r4b9ST8JRqDLcQDq3vd/y/N//lud+/1ebuHWPbIP3dv2" +
+            "d9f9BWLk34RhUGWHAIausCqIVWqP2IBmA6QJeO98grdl7TmjN3ntKa9a+kyCsOXvfaYWaGYtA8kAD9qI" +
+            "bIJbk1K3cl3CCQ1/WmcFw2723ID+bn/iMgi3P/fovndPVI98aDHeBUm/icZABhgda/uvvbvivMSfnDoP" +
+            "+mvN3LU59A2r6goItz/76L+SbnCwSZ9lmsK/pPwhLlfgt4dSWtTHY1/zfABiwqlNSLoAMZGCYtGkHw8Q" +
+            "N25QnbtqjBsSMk7fsZogrLoNIAkGcYytDrt9sKI+BoTVuD0ND5FYoj4FhIYPS+lUMmnugXIY+BoHZ0Qy" +
+            "MSVAuQ6Yna/bGBvHd65rk96xvkt29tk542+JSgVVgyf2S3reeycf+f6UQ9x/EnyVkve4lkP1SPu6/J4N" +
+            "sSEWMUNO3nQb/P2zVR8Gfdxj839erfJbhinTohyfyMf/fKMSDDdgj7n3tsVz0f5DYEgbH3QuqxVd/BRr" +
+            "wfos+Cv60Tf//udlq9xmC2eQStkt4nC/h1WkFGbBT0vsK3AAhe7C3ltXIbj48RfXKoclql2B4f5/yWW9" +
+            "zzkCQPApAMYDfYTdUmHiwC8mAeQwO29a3S+/5vsvw//fdhv8LQoSqoMpwgx2SnhdBmp8DA3YKg82qda0" +
+            "yuz5t1///Eejn7Z1K4ISEF4SyyyddkQ75uF/S5yZUiOHsbPV7N5dovXE15vCCCkEBAwMAWghVTrDaHg4" +
+            "AAAAASUVORK5CYII=</icon>\\r\\n    <clicks>1</clicks>\\r\\n  </Favourites>\\r\\n</Docum" +
+            "entElement>")]
         public string favouritePages {
             get {
                 return ((string)(this["favouritePages"]));
