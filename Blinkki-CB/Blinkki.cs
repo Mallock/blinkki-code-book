@@ -129,7 +129,7 @@ namespace Blinkki_CB
             DataRowCollection rc = favs.GetFavs();
             foreach (DataRow r in rc)
             {
-                ToolStripItem tItem = new ToolStripMenuItem();
+                ToolStripItem tItem = new ToolStripButton();
                 tItem.Tag = r[0].ToString();
                 tItem.Text = "";
                 tItem.ToolTipText = r[0].ToString();
@@ -145,6 +145,12 @@ namespace Blinkki_CB
         {
             ToolStripItem tItem = (ToolStripItem)sender;
             OpenNewTab(tItem.Tag.ToString());
+        }
+
+        private void registryEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowsApp app = new WindowsApp();
+            app.OpenRegEdit();
         }
     }
 }

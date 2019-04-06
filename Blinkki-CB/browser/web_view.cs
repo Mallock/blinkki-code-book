@@ -30,7 +30,7 @@ namespace Blinkki_CB
         private SearchSuggestionsAPI searchAPI = new SearchSuggestionsAPI();
         Favourites favs = new Favourites();
         private List<DownloadDialog> listOfDownloadItems = new List<DownloadDialog> { };
-
+        private bool bUrlFocused = false;
 
         public web_view(Blinkki window, string url, bool hideTools = true)
         {
@@ -42,6 +42,7 @@ namespace Blinkki_CB
             this.txtToolUrl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtToolUrl_KeyUp);
             this.txtToolUrl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.txtToolUrl_MouseUp);
             this.txtToolUrl.TextChanged += new System.EventHandler(this.txtToolUrl_TextChanged);
+            this.txtToolUrl.Leave += TxtToolUrl_Leave;
 
             this.browserTools.Visible = hideTools;
             if (!Uri.IsWellFormedUriString(url, UriKind.RelativeOrAbsolute) && !url.Contains("/fav.html"))
@@ -54,6 +55,11 @@ namespace Blinkki_CB
             browserTools.Renderer = new MainFormToolStripRenderer();
             favs.LoadFavTable();
             btnFav.DropDownItemClicked += new ToolStripItemClickedEventHandler(btnFav_DropDownItemClicked);
+        }
+
+        private void TxtToolUrl_Leave(object sender, EventArgs e)
+        {
+            bUrlFocused = false;
         }
 
         private void btnFav_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -250,9 +256,7 @@ namespace Blinkki_CB
         }
 
         public void ShowContextMenu(string link)
-        {
-            //openLinkInToolStripMenuItem.Tag = link;
-            //browserContextMenu.Show(Control.MousePosition);
+        {            
             LoadUrl(link);
         }
 
@@ -263,8 +267,7 @@ namespace Blinkki_CB
         }
 
         private void openLinkInToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //frm.BeginInvoke(((Action)(() => frm.OpenNewTab(openLinkInToolStripMenuItem.Tag.ToString()))));
+        {            
             LoadUrl(openLinkInToolStripMenuItem.Tag.ToString());
         }
 
@@ -297,9 +300,10 @@ namespace Blinkki_CB
 
         private void txtToolUrl_MouseUp(object sender, MouseEventArgs e)
         {
-            if (txtToolUrl.SelectedText == "")
+            if (txtToolUrl.SelectedText == "" && bUrlFocused == false)
             {
                 txtToolUrl.SelectAll();
+                bUrlFocused = true;
             }
         }
 

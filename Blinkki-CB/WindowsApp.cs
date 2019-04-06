@@ -40,5 +40,10 @@ namespace Blinkki_CB
         {
             Process p = Process.Start("msconfig.exe");
         }
+
+        internal void OpenRegEdit()
+        {
+            Process p = Process.Start("regedit.exe");
+        }
     }
 }
