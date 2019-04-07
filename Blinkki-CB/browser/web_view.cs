@@ -138,7 +138,10 @@ namespace Blinkki_CB
 
         private void Cwb_TitleChanged(object sender, TitleChangedEventArgs e)
         {
-            this.BeginInvoke(((Action)(() => this.Text = e.Title)));
+            if (this.browser != null)
+            {
+                this.BeginInvoke(((Action)(() => this.Text = e.Title)));
+            }   
         }
 
         private void Cwb_AddressChanged(object sender, AddressChangedEventArgs e)
