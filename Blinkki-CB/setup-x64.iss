@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Blinkki - Code Book"
-#define MyAppVersion "1.0"
+#define MyAppVersion "1.0.0.6"
 #define MyAppPublisher "Mika Leiman"
 #define MyAppURL "https://code.blinkki.com/"
 #define MyAppExeName "Blinkki-CB.exe"
