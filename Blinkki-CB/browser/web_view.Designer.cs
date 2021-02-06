@@ -42,6 +42,7 @@
             this.btnFav = new System.Windows.Forms.ToolStripDropDownButton();
             this.linkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtToolUrl = new System.Windows.Forms.ToolStripTextBox();
+            this.btnNewTab = new System.Windows.Forms.ToolStripButton();
             this.pnlBrowser.SuspendLayout();
             this.browserContextMenu.SuspendLayout();
             this.browserTools.SuspendLayout();
@@ -91,6 +92,7 @@
             // browserTools
             // 
             this.browserTools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnNewTab,
             this.btnBack,
             this.btnForward,
             this.btnReload,
@@ -170,6 +172,16 @@
             this.txtToolUrl.Name = "txtToolUrl";
             this.txtToolUrl.Size = new System.Drawing.Size(780, 22);
             // 
+            // btnNewTab
+            // 
+            this.btnNewTab.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNewTab.Image = ((System.Drawing.Image)(resources.GetObject("btnNewTab.Image")));
+            this.btnNewTab.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNewTab.Name = "btnNewTab";
+            this.btnNewTab.Size = new System.Drawing.Size(23, 20);
+            this.btnNewTab.Text = "toolStripButton1";
+            this.btnNewTab.Click += new System.EventHandler(this.btnNewTab_Click);
+            // 
             // web_view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +219,7 @@
         private System.Windows.Forms.ToolStripDropDownButton btnFav;
         private System.Windows.Forms.ToolStripMenuItem linkToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton btnHome;
+        private System.Windows.Forms.ToolStripButton btnNewTab;
     }
 }
 

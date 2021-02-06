@@ -458,6 +458,11 @@ namespace Blinkki_CB
             browser = null;
             Thread.Sleep(200); //Prevent browser close freezing
         }
+
+        private void btnNewTab_Click(object sender, EventArgs e)
+        {
+            frm.OpenNewTab("https://www.google.com/");
+        }
     }
 
 
