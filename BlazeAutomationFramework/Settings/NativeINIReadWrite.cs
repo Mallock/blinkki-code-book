@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,27 +10,40 @@ namespace BlazeAutomationFramework.Settings
 {
     public class NativeINIReadWrite
     {
-        [System.Runtime.InteropServices.DllImport("kernel32")]
+        [DllImport("kernel32")]
         private static extern Int32 WritePrivateProfileString(string lpApplicationName, string lpKeyName, string lpString, string lpFileName);
-        [System.Runtime.InteropServices.DllImport("kernel32")]
-        private static extern Int32 GetPrivateProfileString(string lpApplicationName, string lpKeyName, string lpDefault, string lpReturnedString, Int32 nSize, string lpFileName);
+        [DllImport("kernel32.dll")]
+        private static extern int GetPrivateProfileSection(string lpAppName, byte[] lpszReturnBuffer, int nSize, string lpFileName);
+
+
         public string INIRead(string INIPath, string SectionName, string KeyName, string DefaultValue)
         {
-            string INIReadRet = default;
-            // primary version of call gets single value given all parameters
-            int n;
-            string sData;
-            sData = Strings.Space(1024); // allocate some room
-            n = GetPrivateProfileString(SectionName, KeyName, DefaultValue, sData, sData.Length, INIPath);
-            if (n > 0) // return whatever it gave us
-            {
-                INIReadRet = sData.Substring(0, n);
-            }
-            else
-            {
-                INIReadRet = "";
-            }
+            string INIReadRet = "";
+            
 
+            byte[] buffer = new byte[2048];
+
+            GetPrivateProfileSection(SectionName, buffer, 2048, INIPath);
+            String[] tmp = Encoding.ASCII.GetString(buffer).Trim('\0').Split('\0');
+
+            List<IniValue> result = new List<IniValue> { };
+
+            foreach (String entry in tmp)
+            {
+                if (entry != "")
+                {
+                    IniValue iVal = new IniValue();
+                    iVal.keyName = entry.Substring(0, entry.IndexOf("="));
+                    iVal.keyValue = entry.Substring(entry.IndexOf("=") + 1);
+                    result.Add(iVal);
+                }
+            }
+            if(result.Count > 0)
+            {
+                IniValue iniValue = result.FirstOrDefault(e => e.keyName == KeyName);
+                if (iniValue != null) { INIReadRet = iniValue.keyValue; }
+            }
+           
             return INIReadRet;
         }
 

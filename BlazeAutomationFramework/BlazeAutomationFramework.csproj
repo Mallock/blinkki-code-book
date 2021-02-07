@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\IniValues.cs" />
     <Compile Include="Settings\NativeINIReadWrite.cs" />
     <Compile Include="Trading\NordeaStock.cs">
       <SubType>Form</SubType>
