@@ -1,4 +1,5 @@
 ﻿using BlazeAutomationFramework.Editor;
+using Blinkki_CB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,6 +49,12 @@ namespace BlazeAutomationFramework
         {
             BlazeEditor bedit= new BlazeEditor();
             bedit.Show(dockPanel);
+        }
+
+        private void browserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            web_view web = new web_view(null, "https://www.google.com/");
+            web.Show(dockPanel);
         }
     }
 }

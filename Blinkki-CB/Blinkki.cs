@@ -20,6 +20,17 @@ namespace Blinkki_CB
         public Blinkki()
         {
             InitializeComponent();
+            Cef.EnableHighDPISupport();
+            Cef.AddDisposable(this);
+
+            CefSettings settings = new CefSettings();
+            settings.CachePath = System.IO.Path.GetTempPath();
+
+            //settings.CefCommandLineArgs.Add("enable-npapi", "1");
+            settings.Locale = CultureInfo.CurrentCulture.Name;
+            settings.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0";
+
+            Cef.Initialize(settings);
 
             dockPanel.DocumentStyle = DocumentStyle.DockingWindow;
             //dockPanel.DocumentTabStripLocation = DocumentTabStripLocation.Bottom;
@@ -109,17 +120,7 @@ namespace Blinkki_CB
 
         private void Blinkki_Shown(object sender, EventArgs e)
         {
-            Cef.EnableHighDPISupport();
-            Cef.AddDisposable(this);
-
-            CefSettings settings = new CefSettings();
-            settings.CachePath = System.IO.Path.GetTempPath();
-
-            //settings.CefCommandLineArgs.Add("enable-npapi", "1");
-            settings.Locale = CultureInfo.CurrentCulture.Name;
-            settings.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0";
-
-            Cef.Initialize(settings);
+            
             OpenNewTab("https://code.blinkki.com/");
             LoadFavouriteTools();
         }

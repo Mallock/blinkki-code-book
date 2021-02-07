@@ -57,6 +57,8 @@ namespace Blinkki_CB
             btnFav.DropDownItemClicked += new ToolStripItemClickedEventHandler(btnFav_DropDownItemClicked);
         }
 
+
+
         private void TxtToolUrl_Leave(object sender, EventArgs e)
         {
             bUrlFocused = false;
@@ -64,7 +66,14 @@ namespace Blinkki_CB
 
         private void btnFav_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            frm.OpenNewTab(e.ClickedItem.Tag.ToString());
+            if (frm != null) 
+            { 
+                frm.OpenNewTab(e.ClickedItem.Tag.ToString()); 
+            } 
+            else
+            {
+                LoadUrl(e.ClickedItem.Tag.ToString());
+            }
 
             favs.UpdateFavLink(e.ClickedItem.Tag.ToString());
         }
@@ -82,7 +91,10 @@ namespace Blinkki_CB
             download.OnDownloadUpdatedFired += Download_OnDownloadUpdatedFired;
             download.OnDownloadUpdatedFiredCallBack += Download_OnDownloadUpdatedFiredCallBack;
 
-            life.frm = this.frm;
+            if (frm != null)
+            {
+                life.frm = this.frm;
+            }
             cwb.DownloadHandler = download;
             cwb.LifeSpanHandler = life;
             cwb.AddressChanged += Cwb_AddressChanged;
@@ -133,7 +145,10 @@ namespace Blinkki_CB
         {
             DownloadDialog download = new DownloadDialog(e);
             listOfDownloadItems.Add(download);
-            frm.AddDownloadDock(download);
+            if (frm != null)
+            {
+                frm.AddDownloadDock(download);
+            }
         }
 
         private void Cwb_TitleChanged(object sender, TitleChangedEventArgs e)
@@ -160,7 +175,10 @@ namespace Blinkki_CB
             browser.Dock = DockStyle.Fill;
             while (!this.IsHandleCreated) // added
                 System.Threading.Thread.Sleep(100); //added
-            frm.BeginInvoke(((Action)(() => this.CurrentUrl(this.loadedUrl))));
+            if (frm != null)
+            {
+                frm.BeginInvoke(((Action)(() => this.CurrentUrl(this.loadedUrl))));
+            }
             this.BeginInvoke((Action)(() => UpdateIcon(this.loadedUrl)));
         }
 
@@ -185,6 +203,21 @@ namespace Blinkki_CB
         {
             if (Cef.IsInitialized)
             {
+                AddBrowserToPanel(CefBrowser(this.url));
+            }
+            else
+            {
+                Cef.EnableHighDPISupport();
+                Cef.AddDisposable(this);
+
+                CefSettings settings = new CefSettings();
+                settings.CachePath = System.IO.Path.GetTempPath();
+
+                //settings.CefCommandLineArgs.Add("enable-npapi", "1");
+                settings.Locale = CultureInfo.CurrentCulture.Name;
+                settings.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0";
+
+                Cef.Initialize(settings);
                 AddBrowserToPanel(CefBrowser(this.url));
             }
         }
@@ -454,14 +487,18 @@ namespace Blinkki_CB
 
         private void web_view_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.pnlBrowser.Controls.Remove(browser);            
+            this.pnlBrowser.Controls.Remove(browser);
+            browser.Dispose();
             browser = null;
             Thread.Sleep(200); //Prevent browser close freezing
         }
 
         private void btnNewTab_Click(object sender, EventArgs e)
         {
-            frm.OpenNewTab("https://www.google.com/");
+            if (frm != null)
+            {
+                frm.OpenNewTab("https://www.google.com/");
+            }
         }
     }
 

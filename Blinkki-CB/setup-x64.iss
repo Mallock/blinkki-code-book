@@ -35,6 +35,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "bin\x64\Install\Blinkki-CB.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "bin\x64\Install\Blinkki-CB.exe.config"; DestDir: "{app}"; Flags: onlyifdoesntexist
 Source: "bin\x64\Install\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
