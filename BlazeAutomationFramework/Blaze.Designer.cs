@@ -43,12 +43,12 @@
             this.hTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nordeaStockTraderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainStatus = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.browserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.mainStatus.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -151,7 +151,7 @@
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editorToolStripMenuItem,
-            this.browserToolStripMenuItem});
+            this.nordeaStockTraderToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -162,6 +162,13 @@
             this.editorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editorToolStripMenuItem.Text = "Editor";
             this.editorToolStripMenuItem.Click += new System.EventHandler(this.editorToolStripMenuItem_Click);
+            // 
+            // nordeaStockTraderToolStripMenuItem
+            // 
+            this.nordeaStockTraderToolStripMenuItem.Name = "nordeaStockTraderToolStripMenuItem";
+            this.nordeaStockTraderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nordeaStockTraderToolStripMenuItem.Text = "Nordea Stock Trader";
+            this.nordeaStockTraderToolStripMenuItem.Click += new System.EventHandler(this.nordeaStockTraderToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -201,13 +208,6 @@
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.Size = new System.Drawing.Size(800, 404);
             this.dockPanel.TabIndex = 7;
-            // 
-            // browserToolStripMenuItem
-            // 
-            this.browserToolStripMenuItem.Name = "browserToolStripMenuItem";
-            this.browserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.browserToolStripMenuItem.Text = "Browser";
-            this.browserToolStripMenuItem.Click += new System.EventHandler(this.browserToolStripMenuItem_Click);
             // 
             // Blaze
             // 
@@ -252,7 +252,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Panel pnlMain;
         private WeifenLuo.WinFormsUI.Docking.DockPanel dockPanel;
-        private System.Windows.Forms.ToolStripMenuItem browserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nordeaStockTraderToolStripMenuItem;
     }
 }
 

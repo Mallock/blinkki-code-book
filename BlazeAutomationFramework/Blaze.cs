@@ -1,11 +1,13 @@
 ﻿using BlazeAutomationFramework.Editor;
-using Blinkki_CB;
+using CefSharp;
+using CefSharp.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +18,23 @@ namespace BlazeAutomationFramework
 {
     public partial class Blaze : Form
     {
+        public string SettingsPath = System.IO.Directory.GetCurrentDirectory() + "\\Settings.ini";
+
         public Blaze()
         {
             InitializeComponent();
+            Cef.EnableHighDPISupport();
+            Cef.AddDisposable(this);
+
+            CefSettings settings = new CefSettings();
+            settings.CachePath = System.IO.Path.GetTempPath();
+
+            //settings.CefCommandLineArgs.Add("enable-npapi", "1");
+            settings.Locale = CultureInfo.CurrentCulture.Name;
+            settings.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0";
+
+            Cef.Initialize(settings);
+
             dockPanel.DocumentStyle = DocumentStyle.DockingWindow;
             dockPanel.Theme = new WeifenLuo.WinFormsUI.Docking.VS2015LightTheme();
             DockPaneStripSkin dockPaneSkin = new DockPaneStripSkin();
@@ -51,10 +67,12 @@ namespace BlazeAutomationFramework
             bedit.Show(dockPanel);
         }
 
-        private void browserToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void nordeaStockTraderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            web_view web = new web_view(null, "https://www.google.com/");
-            web.Show(dockPanel);
+            Trading.NordeaStock nStock = new Trading.NordeaStock();
+            nStock.Show(dockPanel);
         }
     }
 }
