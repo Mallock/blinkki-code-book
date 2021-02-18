@@ -52,8 +52,32 @@ namespace Blinkki_CB
 
             dockPanel.ShowDocumentIcon = true;
 
-        }
+            Font theFont = new Font("SegoeUI", 10.0F, FontStyle.Regular );
 
+            foreach (Control theControl in (GetAllControls(this)))
+            {
+                theControl.Font = theFont;
+            }
+
+        }
+        public static IEnumerable<Control> GetAllControls(Control aControl)
+        {
+            Stack<Control> stack = new Stack<Control>();
+
+            stack.Push(aControl);
+
+            while (stack.Any())
+            {
+                var nextControl = stack.Pop();
+
+                foreach (Control childControl in nextControl.Controls)
+                {
+                    stack.Push(childControl);
+                }
+
+                yield return nextControl;
+            }
+        }
         public void Title(string title)
         {
             this.Text = title;
